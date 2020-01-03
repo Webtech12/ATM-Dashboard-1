@@ -1,0 +1,40 @@
+﻿<Window x:Class="ATM_Dashboard1.ATM_Login"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:ATM_Dashboard1"
+        xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+        mc:Ignorable="d"
+        Title="ATM_Login" Height="500" Width="350" ResizeMode="NoResize"
+        WindowStartupLocation="CenterScreen" WindowStyle="None"
+        FontFamily="Segoe UI Emoji">
+    <Grid>
+
+        <Rectangle Height="270" VerticalAlignment="Top">
+
+        </Rectangle>
+
+        <Image Source="assets/DANS.png" Height="103" VerticalAlignment="Top" Margin="0,2,231,0"/>
+
+        <Image Source="assets/atmars1.png" Width="100" Height="30" VerticalAlignment="Top" Margin="240,33,10,0" RenderTransformOrigin="0.505,0.592"/>
+
+        <Rectangle Width="280" Height="240" VerticalAlignment="Top" Margin="35,143,35,0" RadiusY="10" RadiusX="10" Fill="White">
+            <Rectangle.Effect>
+                <DropShadowEffect BlurRadius="15" Direction="0" RenderingBias="Quality" ShadowDepth="1" Color="#FFBBBBBB"/>
+            </Rectangle.Effect>
+        </Rectangle>
+
+        <Grid VerticalAlignment="Bottom" Margin="35,80" Height="240">
+            <Image Source="assets/Key.png" Height="41" VerticalAlignment="Top" Margin="71,7,160,0"/>
+            <Label Content="LOGIN" HorizontalAlignment="Center" VerticalAlignment="Top" Margin="0,9,0,0" Foreground="Gray" FontSize="18"/>
+            <StackPanel VerticalAlignment="Center" Margin="15,-10,15,0">
+                <TextBox Name="txtname" Margin="0,10" materialDesign:HintAssist.Hint="Email" Style="{StaticResource MaterialDesignFloatingHintTextBox}" FontFamily="Champagne &amp; Limousines" FontSize="16"/>
+                <PasswordBox Name="txtpass" Margin="0,10" materialDesign:HintAssist.Hint="Password" Style="{StaticResource MaterialDesignFloatingHintPasswordBox}" FontFamily="Champagne &amp; Limousines" FontSize="16"/>
+            </StackPanel>
+        </Grid>
+        <Button Width="150" HorizontalAlignment="Center" VerticalAlignment="Top" Margin="0,368,0,0" Content="LOGIN" Background="#FF45B6AF" BorderBrush="#FF45B6AF" Click="Login_Click"/>
+        <TextBlock Text="2020 © Powered by dans ATMS." HorizontalAlignment="Center" VerticalAlignment="Top" Margin="0,439,0,0" Foreground="Gray" Cursor="Hand"/>
+
+    </Grid>
+</Window>
