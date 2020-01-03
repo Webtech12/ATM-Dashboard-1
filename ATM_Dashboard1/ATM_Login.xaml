@@ -29,7 +29,7 @@
             <Image Source="assets/Key.png" Height="41" VerticalAlignment="Top" Margin="71,7,160,0"/>
             <Label Content="LOGIN" HorizontalAlignment="Center" VerticalAlignment="Top" Margin="0,9,0,0" Foreground="Gray" FontSize="18"/>
             <StackPanel VerticalAlignment="Center" Margin="15,-10,15,0">
-                <TextBox Name="txtname" Margin="0,10" materialDesign:HintAssist.Hint="Email" Style="{StaticResource MaterialDesignFloatingHintTextBox}" FontFamily="Champagne &amp; Limousines" FontSize="16"/>
+                <TextBox Name="txtname" Margin="0,10" materialDesign:HintAssist.Hint="Username" Style="{StaticResource MaterialDesignFloatingHintTextBox}" FontFamily="Champagne &amp; Limousines" FontSize="16"/>
                 <PasswordBox Name="txtpass" Margin="0,10" materialDesign:HintAssist.Hint="Password" Style="{StaticResource MaterialDesignFloatingHintPasswordBox}" FontFamily="Champagne &amp; Limousines" FontSize="16"/>
             </StackPanel>
         </Grid>

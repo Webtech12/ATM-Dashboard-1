@@ -15,6 +15,7 @@
 
   <ItemGroup>
     <PackageReference Include="MaterialDesignThemes" Version="3.0.1" />
+    <PackageReference Include="MySqlConnector" Version="0.61.0" />
   </ItemGroup>
 
   <ItemGroup>

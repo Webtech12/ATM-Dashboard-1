@@ -41,6 +41,10 @@
             "MaterialDesignThemes": {
               "target": "Package",
               "version": "[3.0.1, )"
+            },
+            "MySqlConnector": {
+              "target": "Package",
+              "version": "[0.61.0, )"
             }
           },
           "imports": [
