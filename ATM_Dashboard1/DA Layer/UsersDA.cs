@@ -1,10 +1,7 @@
 ﻿using ATM_Dashboard1.helper;
 using ATM_Dashboard1.PD_Layer;
 using MySql.Data.MySqlClient;
-using System;
-using System.Collections.Generic;
 using System.Data;
-using System.Text;
 
 namespace ATM_Dashboard1.DA_Layer
 {

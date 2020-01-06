@@ -3,10 +3,218 @@
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
         xmlns:local="clr-namespace:ATM_Dashboard1"
         mc:Ignorable="d"
+        ResizeMode="CanMinimize" WindowState="Maximized"
+        WindowStartupLocation="CenterScreen" WindowStyle="SingleBorderWindow"
         Title="MainWindow" Height="450" Width="800">
     <Grid>
+
+        <Grid Grid.Column="1" Grid.Row="1" Background="#EFEEEE">
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="200"/>
+                    <RowDefinition Height="200"/>
+                    <RowDefinition Height="200"/>
+                    <RowDefinition Height="200"/>
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="0.5*"/>
+                    <ColumnDefinition Width="0.5*"/>
+                    <ColumnDefinition Width="0.5*"/>
+                    <ColumnDefinition Width="0.5*"/>
+                </Grid.ColumnDefinitions>
+
+                <Grid Grid.Column="0" Margin="0,0,32,0">
+                    <Rectangle Height="120" Margin="20,40,-9,40" Fill="White" RadiusY="10" RadiusX="10" >
+                        <Rectangle.Effect>
+                            <DropShadowEffect BlurRadius="20" Color="#FFDEDEDE" RenderingBias="Quality" ShadowDepth="1"/>
+                        </Rectangle.Effect>
+                    </Rectangle>
+                    <Grid Margin="25" Height="120">
+                        <Grid Width="35" Height="50" Background="#FFCF1F1F" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="20 0">
+                            <Grid.Effect>
+                                <DropShadowEffect BlurRadius="20" Color="#FFECECEC" RenderingBias="Quality" ShadowDepth="1"/>
+                            </Grid.Effect>
+                            <materialDesign:PackIcon Kind="InformationOutline" HorizontalAlignment="Center" VerticalAlignment="Bottom" Margin="5" Foreground="White" Width="20" Height="20"/>
+                        </Grid>
+                        <TextBlock Text="Open Faults" FontSize="25" HorizontalAlignment="Center" FontFamily="Champagne &amp; Limousines" VerticalAlignment="Top" Foreground="Gray" Height="28" Width="142" RenderTransformOrigin="0.433,0.599" Margin="0,30,0,0"/>
+                        <StackPanel Orientation="Horizontal" HorizontalAlignment="Right" VerticalAlignment="Top" Margin="10 20">
+                            <TextBlock Text="49" FontFamily="Champagne &amp; Limousines" Foreground="Gray" FontSize="50"/>
+                        </StackPanel>
+                    </Grid>
+                </Grid>
+
+                <Grid Grid.Column="1">
+                    <Rectangle MouseDown="aman_modal" Height="120" Margin="20" Fill="White" RadiusY="10" RadiusX="10" Cursor="Hand" >
+                        <Rectangle.Effect>
+                            <DropShadowEffect BlurRadius="20" Color="#FFDEDEDE" RenderingBias="Quality" ShadowDepth="1"/>
+                        </Rectangle.Effect>
+                    </Rectangle>
+                    <Grid Margin="25" Height="120">
+                        <Grid Width="35" Height="50" Background="#FF41A43C" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="20 0">
+                            <Grid.Effect>
+                                <DropShadowEffect BlurRadius="20" Color="#FFECECEC" RenderingBias="Quality" ShadowDepth="1"/>
+                            </Grid.Effect>
+                            <materialDesign:PackIcon Kind="ContentCopy" HorizontalAlignment="Center" VerticalAlignment="Stretch" Margin="0,25,0,5" Foreground="White" Width="20"/>
+                        </Grid>
+                        <TextBlock Text="AMAN" FontSize="35" HorizontalAlignment="Left" FontFamily="Champagne &amp; Limousines" Margin="108,32,0,0" VerticalAlignment="Top" Foreground="Gray" Width="114" Height="33"/>
+                        <StackPanel Orientation="Horizontal" HorizontalAlignment="Right" VerticalAlignment="Top" Margin="10 30">
+                            <TextBlock Text="50" FontFamily="Champagne &amp; Limousines" VerticalAlignment="Center" Foreground="Gray" FontSize="50"/>
+                        </StackPanel>
+                    </Grid>
+                </Grid>
+
+                <Grid Grid.Column="2">
+                    <Rectangle MouseDown="wt_modal" Cursor="Hand" Height="120" Margin="20" Fill="White" RadiusY="10" RadiusX="10" >
+                        <Rectangle.Effect>
+                            <DropShadowEffect BlurRadius="20" Color="#FFDEDEDE" RenderingBias="Quality" ShadowDepth="1"/>
+                        </Rectangle.Effect>
+                    </Rectangle>
+                    <Grid Margin="25" Height="120">
+                        <Grid Width="35" Height="50" Background="#FF41A43C" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="20 0">
+                            <Grid.Effect>
+                                <DropShadowEffect BlurRadius="20" Color="#FFECECEC" RenderingBias="Quality" ShadowDepth="1"/>
+                            </Grid.Effect>
+                            <materialDesign:PackIcon Kind="ContentCopy" HorizontalAlignment="Center" VerticalAlignment="Bottom" Margin="5" Foreground="White" Width="20" Height="20"/>
+                        </Grid>
+                        <TextBlock Text="WT " FontSize="35" HorizontalAlignment="Right" FontFamily="Champagne &amp; Limousines" Margin="0,28,172,0" VerticalAlignment="Top" Foreground="Gray" Height="32" Width="80"/>
+                        <StackPanel Orientation="Horizontal" HorizontalAlignment="Right" VerticalAlignment="Top" Margin="10 30">
+                            <TextBlock Text="Both Active" FontFamily="Champagne &amp; Limousines" VerticalAlignment="Center" Foreground="Gray" FontSize="30"/>
+                        </StackPanel>
+                    </Grid>
+                </Grid>
+
+                <Grid Grid.Column="3">
+                    <Rectangle MouseDown="dpo_modal" Cursor="Hand" Height="120" Margin="20" Fill="White" RadiusY="10" RadiusX="10" >
+                        <Rectangle.Effect>
+                            <DropShadowEffect BlurRadius="20" Color="#FFDEDEDE" RenderingBias="Quality" ShadowDepth="1"/>
+                        </Rectangle.Effect>
+                    </Rectangle>
+                    <Grid Margin="25" Height="120">
+                        <Grid Width="35" Height="50" Background="#FF41A43C" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="20 0">
+                            <Grid.Effect>
+                                <DropShadowEffect BlurRadius="20" Color="#FFECECEC" RenderingBias="Quality" ShadowDepth="1"/>
+                            </Grid.Effect>
+                            <materialDesign:PackIcon Kind="ContentCopy" HorizontalAlignment="Center" VerticalAlignment="Bottom" Margin="5" Foreground="White" Width="20" Height="20"/>
+                        </Grid>
+                        <TextBlock Text="D-APO " FontSize="30" HorizontalAlignment="Right" FontFamily="Champagne &amp; Limousines" Margin="0,31,162,0" VerticalAlignment="Top" Foreground="Gray" Height="32" Width="95"/>
+                        <StackPanel Orientation="Horizontal" HorizontalAlignment="Right" VerticalAlignment="Top" Margin="10 30">
+                            <TextBlock Text="Not Active" FontFamily="Champagne &amp; Limousines" VerticalAlignment="Center" Foreground="Gray" FontSize="30"/>
+                        </StackPanel>
+                    </Grid>
+                </Grid>
+
+                <TextBlock Text="Runways / MET" FontSize="25" HorizontalAlignment="Left" FontFamily="Champagne &amp; Limousines" Margin="31,0,0,0" VerticalAlignment="Top" Foreground="Gray" Height="28" Width="173" Grid.Row="1" Grid.ColumnSpan="2"/>
+
+                <Grid Grid.Row="1" Grid.Column="0" Margin="0,0,32,0">
+                    <Rectangle Height="120" Margin="20,40,-9,40" Fill="White" RadiusY="10" RadiusX="10" >
+                        <Rectangle.Effect>
+                            <DropShadowEffect BlurRadius="20" Color="#FFDEDEDE" RenderingBias="Quality" ShadowDepth="1"/>
+                        </Rectangle.Effect>
+                    </Rectangle>
+                    <Grid Margin="25" Height="120">
+                        <TextBlock Text="OMDB" FontSize="25" HorizontalAlignment="Left" FontFamily="Champagne &amp; Limousines" VerticalAlignment="Top" Foreground="#D91E18 " Height="28" Width="142" RenderTransformOrigin="0.433,0.599" Margin="25,30,0,0"/>
+                        <TextBlock Text="ARRIVAL 30L" FontSize="20" HorizontalAlignment="Center" FontFamily="Champagne &amp; Limousines" VerticalAlignment="Top" Foreground="#4DB3A2 " Height="28" Width="142" RenderTransformOrigin="0.433,0.599" Margin="80,32,0,0"/>
+                        <TextBlock Text="DEPARTURE 30R" FontSize="20" HorizontalAlignment="Center" FontFamily="Champagne &amp; Limousines" VerticalAlignment="Top" Foreground="#4DB3A2 " Height="28" Width="142" RenderTransformOrigin="0.433,0.599" Margin="80,62,0,0"/>
+                        <StackPanel Orientation="Horizontal" HorizontalAlignment="Right" VerticalAlignment="Top" Margin="10 20">
+                        </StackPanel>
+                    </Grid>
+                </Grid>
+
+                <Grid  Grid.Row="1" Grid.Column="1">
+                    <Rectangle Height="120" Margin="20" Fill="White" RadiusY="10" RadiusX="10" >
+                        <Rectangle.Effect>
+                            <DropShadowEffect BlurRadius="20" Color="#FFDEDEDE" RenderingBias="Quality" ShadowDepth="1"/>
+                        </Rectangle.Effect>
+                    </Rectangle>
+                    <Grid Margin="25" Height="120">
+                        <TextBlock Text="MET " FontSize="30" HorizontalAlignment="Right" FontFamily="Champagne &amp; Limousines" Margin="0,31,162,0" VerticalAlignment="Top" Foreground="Gray" Height="32" Width="95"/>
+                        <StackPanel Orientation="Horizontal" HorizontalAlignment="Right" VerticalAlignment="Top" Margin="10 30">
+                            <TextBlock Margin="0,0,10,0" Foreground="#4DB3A2 " Text="VMC" FontFamily="Champagne &amp; Limousines" VerticalAlignment="Center" FontSize="30"/>
+                        </StackPanel>
+                    </Grid>
+                </Grid>
+
+                <Grid Grid.Row="1" Grid.Column="2">
+                    <Rectangle MouseDown="dw_modal" Cursor="Hand" Height="120" Margin="20" Fill="White" RadiusY="10" RadiusX="10" >
+                        <Rectangle.Effect>
+                            <DropShadowEffect BlurRadius="20" Color="#FFDEDEDE" RenderingBias="Quality" ShadowDepth="1"/>
+                        </Rectangle.Effect>
+                    </Rectangle>
+                    <Grid Margin="25" Height="120">
+                        <Grid Width="35" Height="50" Background="#FF41A43C" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="20 0">
+                            <Grid.Effect>
+                                <DropShadowEffect BlurRadius="20" Color="#FFECECEC" RenderingBias="Quality" ShadowDepth="1"/>
+                            </Grid.Effect>
+                            <materialDesign:PackIcon Kind="ContentCopy" HorizontalAlignment="Center" VerticalAlignment="Bottom" Margin="5" Foreground="White" Width="20" Height="20"/>
+                        </Grid>
+                        <TextBlock Text="Down Wind " FontSize="25" HorizontalAlignment="Left" FontFamily="Champagne &amp; Limousines" Margin="90,34,0,0" VerticalAlignment="Top" Foreground="Gray" Height="32" Width="152"/>
+                        <StackPanel Orientation="Horizontal" HorizontalAlignment="Right" VerticalAlignment="Top" Margin="10 30">
+                            <TextBlock Text="Single" FontFamily="Champagne &amp; Limousines" VerticalAlignment="Center" Foreground="Gray" FontSize="30"/>
+                        </StackPanel>
+                    </Grid>
+                </Grid>
+
+                <Grid Grid.Row="1" Grid.Column="3">
+                    <Rectangle MouseDown="watch_view" Cursor="Hand" Height="120" Margin="20" Fill="White" RadiusY="10" RadiusX="10" >
+                        <Rectangle.Effect>
+                            <DropShadowEffect BlurRadius="20" Color="#FFDEDEDE" RenderingBias="Quality" ShadowDepth="1"/>
+                        </Rectangle.Effect>
+                    </Rectangle>
+                    <Grid Margin="25" Height="120">
+                        <TextBlock Text="ATC Watch Briefing " FontSize="25" HorizontalAlignment="Left" FontFamily="Champagne &amp; Limousines" Margin="65,35,0,0" VerticalAlignment="Top" Foreground="Gray" Height="45" Width="360"/>
+                    </Grid>
+                </Grid>
+
+
+                <Grid Grid.Row="2" Grid.Column="3">
+                    <Rectangle Height="120" Margin="20" Fill="White" RadiusY="10" RadiusX="10" >
+                        <Rectangle.Effect>
+                            <DropShadowEffect BlurRadius="20" Color="#FFDEDEDE" RenderingBias="Quality" ShadowDepth="1"/>
+                        </Rectangle.Effect>
+                    </Rectangle>
+                    <Grid Margin="25" Height="120">
+                        <TextBlock Text="Fault Reporting " FontSize="25" HorizontalAlignment="Left" FontFamily="Champagne &amp; Limousines" Margin="65,35,0,0" VerticalAlignment="Top" Foreground="Gray" Height="45" Width="360"/>
+                    </Grid>
+                </Grid>
+
+                <Grid Grid.Row="2" Grid.Column="2">
+                    <Rectangle Height="120" Margin="20" Fill="White" RadiusY="10" RadiusX="10" >
+                        <Rectangle.Effect>
+                            <DropShadowEffect BlurRadius="20" Color="#FFDEDEDE" RenderingBias="Quality" ShadowDepth="1"/>
+                        </Rectangle.Effect>
+                    </Rectangle>
+                    <Grid Margin="25" Height="120">
+                        <TextBlock Text="General Entry " FontSize="25" HorizontalAlignment="Left" FontFamily="Champagne &amp; Limousines" Margin="65,35,0,0" VerticalAlignment="Top" Foreground="Gray" Height="45" Width="360"/>
+                    </Grid>
+                </Grid>
+
+                <Grid Grid.Row="3" Grid.Column="2">
+                    <Rectangle Height="120" Margin="20" Fill="White" RadiusY="10" RadiusX="10" >
+                        <Rectangle.Effect>
+                            <DropShadowEffect BlurRadius="20" Color="#FFDEDEDE" RenderingBias="Quality" ShadowDepth="1"/>
+                        </Rectangle.Effect>
+                    </Rectangle>
+                    <Grid Margin="25" Height="120">
+                        <TextBlock Text="ROSI" FontSize="30" HorizontalAlignment="Left" FontFamily="Champagne &amp; Limousines" Margin="75,35,0,0" VerticalAlignment="Top" Foreground="#8877a9 " Height="45" Width="150"/>
+                    </Grid>
+                </Grid>
+
+                <Grid Grid.Row="3" Grid.Column="3">
+                    <Rectangle Height="120" Margin="20" Fill="White" RadiusY="10" RadiusX="10" >
+                        <Rectangle.Effect>
+                            <DropShadowEffect BlurRadius="20" Color="#FFDEDEDE" RenderingBias="Quality" ShadowDepth="1"/>
+                        </Rectangle.Effect>
+                    </Rectangle>
+                    <Grid Margin="25" Height="120">
+                        <TextBlock Text="EPL" FontSize="30" HorizontalAlignment="Left" FontFamily="Champagne &amp; Limousines" Margin="75,35,0,0" VerticalAlignment="Top" Foreground="#8877a9 " Height="45" Width="118"/>
+                    </Grid>
+                </Grid>
+
+            </Grid>
+        </Grid>
 
     </Grid>
 </Window>

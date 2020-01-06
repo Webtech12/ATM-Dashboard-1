@@ -2,16 +2,7 @@
 using ATM_Dashboard1.helper;
 using ATM_Dashboard1.PD_Layer;
 using System;
-using System.Collections.Generic;
-using System.Text;
 using System.Windows;
-using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
-using System.Windows.Input;
-using System.Windows.Media;
-using System.Windows.Media.Imaging;
-using System.Windows.Shapes;
 
 namespace ATM_Dashboard1
 {
@@ -32,7 +23,6 @@ namespace ATM_Dashboard1
 
             string username = txtname.Text;
             string password = txtpass.Password;
-
             
             if (username.Length < 1 || password.Length < 1)
             {
@@ -49,6 +39,7 @@ namespace ATM_Dashboard1
                         MessageBox.Show("Login Success");
                         MainWindow dashboard = new MainWindow();
                         dashboard.Show();
+                        this.Close();
                     }
                     else
                     {
@@ -59,7 +50,7 @@ namespace ATM_Dashboard1
                 }
                 catch (Exception ex)
                 {
-                    MessageBox.Show("connection Failed" + ex.Message);
+                    MessageBox.Show("Username not found ");
                 }
                
             }
