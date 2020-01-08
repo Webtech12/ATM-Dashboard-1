@@ -14,7 +14,8 @@ namespace ATM_Dashboard1
 
         private void aman_modal(object sender, RoutedEventArgs e)
         {
-            MessageBox.Show("works");
+            aman_modal aman = new aman_modal();
+            aman.Show();
         }
 
         private void wt_modal(object sender, System.Windows.Input.MouseButtonEventArgs e)

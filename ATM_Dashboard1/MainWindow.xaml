@@ -34,23 +34,23 @@
 
 
 
-                <Grid Grid.Row="1" Grid.RowSpan="4" Grid.ColumnSpan="2" HorizontalAlignment="Center" Width="580" Height="510">
+                <Grid Grid.Row="1" Grid.RowSpan="4" Grid.ColumnSpan="2" HorizontalAlignment="Center" Width="580" Height="610">
                     
-                    <Grid Margin="30 -10 60 150">
+                    <Grid Margin="30 -10 60 -90">
                         <Grid.OpacityMask>
                             <VisualBrush Visual="{ Binding ElementName=BorderG2 }"/>
                         </Grid.OpacityMask>
-                        <Border x:Name="BorderG2" CornerRadius="15" Background="#D0D0D0"/>
+                        <Border x:Name="BorderG2" CornerRadius="15" BorderBrush="DarkGray" BorderThickness="2"/>
                     </Grid>
                     
                 </Grid>
-                <Grid Grid.Row="3" Grid.RowSpan="4" Grid.ColumnSpan="2" HorizontalAlignment="Center" Width="580" Height="510">
+                <Grid Grid.Row="3" Grid.RowSpan="3" Grid.ColumnSpan="2" HorizontalAlignment="Center" Width="580" Height="510">
 
                     <Grid Margin="30,-10,60,90">
                         <Grid.OpacityMask>
                             <VisualBrush Visual="{ Binding ElementName=BorderG2 }"/>
                         </Grid.OpacityMask>
-                        <Border x:Name="BorderG3" CornerRadius="15" Background="#D0D0D0"/>
+                        <Border x:Name="BorderG3" CornerRadius="15" BorderBrush="DarkGray" BorderThickness="2" />
                     </Grid>
                     
                 </Grid>
