@@ -8,20 +8,11 @@
     ".NETCoreApp,Version=v3.1": {
       "ATM_Dashboard1/1.0.0": {
         "dependencies": {
-          "CryptSharpOfficial": "2.1.0",
           "MaterialDesignThemes": "3.0.1",
           "MySqlConnector": "0.61.0"
         },
         "runtime": {
           "ATM_Dashboard1.dll": {}
-        }
-      },
-      "CryptSharpOfficial/2.1.0": {
-        "runtime": {
-          "lib/CryptSharp.dll": {
-            "assemblyVersion": "2.1.0.0",
-            "fileVersion": "2.1.0.0"
-          }
         }
       },
       "MaterialDesignColors/1.2.2": {
@@ -58,13 +49,6 @@
       "type": "project",
       "serviceable": false,
       "sha512": ""
-    },
-    "CryptSharpOfficial/2.1.0": {
-      "type": "package",
-      "serviceable": true,
-      "sha512": "sha512-t90jvDpTXoP4LTTHh/+HnBsOxQwOmlhS0hlqgocLKN0T5udAG8QuVtwcpGsjwK2Sl6YfRgflCGiSgeVWwF6+jw==",
-      "path": "cryptsharpofficial/2.1.0",
-      "hashPath": "cryptsharpofficial.2.1.0.nupkg.sha512"
     },
     "MaterialDesignColors/1.2.2": {
       "type": "package",

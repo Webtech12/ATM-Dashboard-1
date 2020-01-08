@@ -6,14 +6,6 @@
   "compilationOptions": {},
   "targets": {
     ".NETCoreApp,Version=v3.1": {
-      "CryptSharpOfficial/2.1.0": {
-        "runtime": {
-          "lib/CryptSharp.dll": {
-            "assemblyVersion": "2.1.0.0",
-            "fileVersion": "2.1.0.0"
-          }
-        }
-      },
       "MaterialDesignColors/1.2.2": {
         "runtime": {
           "lib/netcoreapp3.0/MaterialDesignColors.dll": {
@@ -44,13 +36,6 @@
     }
   },
   "libraries": {
-    "CryptSharpOfficial/2.1.0": {
-      "type": "package",
-      "serviceable": true,
-      "sha512": "sha512-t90jvDpTXoP4LTTHh/+HnBsOxQwOmlhS0hlqgocLKN0T5udAG8QuVtwcpGsjwK2Sl6YfRgflCGiSgeVWwF6+jw==",
-      "path": "cryptsharpofficial/2.1.0",
-      "hashPath": "cryptsharpofficial.2.1.0.nupkg.sha512"
-    },
     "MaterialDesignColors/1.2.2": {
       "type": "package",
       "serviceable": true,

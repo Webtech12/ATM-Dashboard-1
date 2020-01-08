@@ -38,10 +38,6 @@
       "frameworks": {
         "netcoreapp3.1": {
           "dependencies": {
-            "CryptSharpOfficial": {
-              "target": "Package",
-              "version": "[2.1.0, )"
-            },
             "MaterialDesignThemes": {
               "target": "Package",
               "version": "[3.0.1, )"

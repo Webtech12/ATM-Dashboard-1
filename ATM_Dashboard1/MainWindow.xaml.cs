@@ -33,6 +33,26 @@ namespace ATM_Dashboard1
         
         private void watch_view(object sender, System.Windows.Input.MouseButtonEventArgs e)
         {
+            MessageBox.Show("this");
+        }
+
+        private void fault_modal(object sender, System.Windows.Input.MouseButtonEventArgs e)
+        {
+
+        }
+        
+        private void gen_modal(object sender, System.Windows.Input.MouseButtonEventArgs e)
+        {
+
+        }
+
+        private void rosi(object sender, System.Windows.Input.MouseButtonEventArgs e)
+        {
+
+        }
+        
+        private void epl(object sender, System.Windows.Input.MouseButtonEventArgs e)
+        {
 
         }
     }
