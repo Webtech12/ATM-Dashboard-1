@@ -18,6 +18,8 @@
                     <RowDefinition Height="*"/>
                     <RowDefinition Height="*"/>
                     <RowDefinition Height="*"/>
+                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="*"/>
                 </Grid.RowDefinitions>
                 <Grid.ColumnDefinitions>
                     <ColumnDefinition Width="0.5*"/>
@@ -29,92 +31,92 @@
                 </Grid.ColumnDefinitions>
 
                 <Grid Grid.Column="0" Margin="0,0,50,0">
-                    <Rectangle Height="90" Margin="20,40,20,40" Fill="White" RadiusY="10" RadiusX="10" >
+                    <Rectangle Height="70" Margin="20,40,20,40" Fill="White" RadiusY="10" RadiusX="10" >
                         <Rectangle.Effect>
                             <DropShadowEffect BlurRadius="20" Color="#FFDEDEDE" RenderingBias="Quality" ShadowDepth="1"/>
                         </Rectangle.Effect>
                     </Rectangle>
-                    <Grid Margin="0,0,0,0" Height="90">
-                        <TextBlock Text="Open Faults" FontSize="25" HorizontalAlignment="Center" 
-                            FontFamily="Champagne &amp; Limousines" VerticalAlignment="Top" 
-                            Foreground="#8877a9 " Height="28" Width="139" RenderTransformOrigin="0.433,0.599" Margin="0,12,0,0" Grid.Row="1"/>
-                        <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" VerticalAlignment="Top" Margin="0,45,0,0" Grid.RowSpan="2">
-                            <TextBlock Text="49" FontWeight="Bold" FontFamily="Champagne &amp; Limousines" Foreground="Gray" FontSize="35"/>
+                    <Grid Margin="0,0,0,0" Height="70">
+                        <TextBlock Text="Open Faults" FontSize="25" HorizontalAlignment="Center"  
+                            FontFamily="Champagne &amp; Limousines" VerticalAlignment="Top"
+                            Foreground="#8877a9 " Height="28" Width="129" RenderTransformOrigin="0.433,0.599" Margin="0,12,0,0"/>
+                        <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" VerticalAlignment="Top" Margin="0,40,0,0" Grid.RowSpan="2">
+                            <TextBlock Text="49" FontWeight="Bold" FontFamily="Champagne &amp; Limousines" Foreground="Gray" FontSize="30"/>
                         </StackPanel>
                     </Grid>
                 </Grid>
 
                 <Grid Grid.Column="1" Margin="0,0,50,0">
-                    <Rectangle MouseDown="aman_modal"  Height="90" Margin="20,40,20,40" Fill="White" RadiusY="10" RadiusX="10" Cursor="Hand" >
+                    <Rectangle MouseDown="aman_modal"  Height="70" Margin="20,40,20,40" Fill="White" RadiusY="10" RadiusX="10" Cursor="Hand" >
                         <Rectangle.Effect>
-                            <DropShadowEffect BlurRadius="20" Color="#FFDEDEDE" RenderingBias="Quality" ShadowDepth="1"/>
+                            <DropShadowEffect BlurRadius="70" Color="#FFDEDEDE" RenderingBias="Quality" ShadowDepth="1"/>
                         </Rectangle.Effect>
                     </Rectangle>
                     <Grid Margin="0,0,0,0" Height="90">
                         <TextBlock Text="AMAN" FontSize="25" HorizontalAlignment="Center" 
                             FontFamily="Champagne &amp; Limousines" VerticalAlignment="Top" 
-                            Foreground="#8877a9 " Height="28" Width="139" RenderTransformOrigin="0.433,0.599" Margin="55,12,0,0" Grid.Row="1"/>
-                        <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" VerticalAlignment="Top" Margin="0,45,0,0" Grid.RowSpan="2">
+                            Foreground="#8877a9 " Height="28" Width="83" RenderTransformOrigin="0.433,0.599" Margin="0,12,0,0"/>
+                        <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" VerticalAlignment="Top" Margin="0,40,0,0" Grid.RowSpan="2">
                             <TextBlock Text="55" FontWeight="Bold" FontFamily="Champagne &amp; Limousines" Foreground="Gray" FontSize="35"/>
                         </StackPanel>
                     </Grid>
                 </Grid>
 
                 <Grid Grid.Column="2"  Margin="0,0,50,0">
-                    <Rectangle MouseDown="wt_modal"  Height="90" Margin="20,40,20,40" Fill="White" RadiusY="10" RadiusX="10" Cursor="Hand" >
+                    <Rectangle MouseDown="wt_modal"  Height="70" Margin="20,40,20,40" Fill="White" RadiusY="10" RadiusX="10" Cursor="Hand" >
                         <Rectangle.Effect>
                             <DropShadowEffect BlurRadius="20" Color="#FFDEDEDE" RenderingBias="Quality" ShadowDepth="1"/>
                         </Rectangle.Effect>
                     </Rectangle>
-                    <Grid Margin="0,0,0,0" Height="90">
+                    <Grid Margin="0,0,0,0" Height="70">
                         <TextBlock Text="WT" FontSize="25" HorizontalAlignment="Center" 
                             FontFamily="Champagne &amp; Limousines" VerticalAlignment="Top" 
-                            Foreground="#8877a9 " Height="28" Width="139" RenderTransformOrigin="0.433,0.599" Margin="80,12,0,0" Grid.Row="1"/>
-                        <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" VerticalAlignment="Top" Margin="0,45,0,0" Grid.RowSpan="2">
-                            <TextBlock Text="Both Active" FontWeight="Bold" FontFamily="Champagne &amp; Limousines" Foreground="Gray" FontSize="25"/>
+                            Foreground="#8877a9 " Height="28" Width="38" RenderTransformOrigin="0.433,0.599" Margin="0,12,0,0"/>
+                        <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" VerticalAlignment="Top" Margin="10,40,0,0" Grid.RowSpan="2">
+                            <TextBlock Text="Both Active" FontWeight="Bold" FontFamily="Champagne &amp; Limousines" Foreground="Gray" FontSize="23" Width="133"/>
                         </StackPanel>
                     </Grid>
                 </Grid>
 
                 <Grid Grid.Column="3" Margin="0,0,50,0">
-                    <Rectangle MouseDown="dpo_modal" Height="90" Margin="20,40,20,40" Fill="White" RadiusY="10" RadiusX="10" Cursor="Hand">
+                    <Rectangle MouseDown="dpo_modal" Height="70" Margin="20,40,20,40" Fill="White" RadiusY="10" RadiusX="10" Cursor="Hand">
                         <Rectangle.Effect>
                             <DropShadowEffect BlurRadius="20" Color="#FFDEDEDE" RenderingBias="Quality" ShadowDepth="1"/>
                         </Rectangle.Effect>
                     </Rectangle>
-                    <Grid Margin="0,0,0,0" Height="90">
+                    <Grid Margin="0,0,0,0" Height="70">
                         <TextBlock Text="D-APO" FontSize="25" HorizontalAlignment="Center" 
                             FontFamily="Champagne &amp; Limousines" VerticalAlignment="Top" 
                             Foreground="#8877a9 " Height="28" Width="139" RenderTransformOrigin="0.433,0.599" Margin="65,12,0,0" Grid.Row="1"/>
-                        <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" VerticalAlignment="Top" Margin="0,45,0,0" Grid.RowSpan="2">
+                        <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" VerticalAlignment="Top" Margin="0,40,0,0" Grid.RowSpan="2">
                             <TextBlock Text="Not Active" FontWeight="Bold" FontFamily="Champagne &amp; Limousines" Foreground="Gray" FontSize="25"/>
                         </StackPanel>
                     </Grid>
                 </Grid>
 
                 <Grid Grid.Column="4" Margin="0,0,50,0">
-                    <Rectangle MouseDown="dw_modal" Height="90" Margin="20,40,20,40" Fill="White" RadiusY="10" RadiusX="10" Cursor="Hand">
+                    <Rectangle MouseDown="dw_modal" Height="70" Margin="20,40,20,40" Fill="White" RadiusY="10" RadiusX="10" Cursor="Hand">
                         <Rectangle.Effect>
                             <DropShadowEffect BlurRadius="20" Color="#FFDEDEDE" RenderingBias="Quality" ShadowDepth="1"/>
                         </Rectangle.Effect>
                     </Rectangle>
-                    <Grid Margin="0,0,0,0" Height="90">
+                    <Grid Margin="0,0,0,0" Height="70">
                         <TextBlock Text="Down Wind" FontSize="25" HorizontalAlignment="Center" 
                             FontFamily="Champagne &amp; Limousines" VerticalAlignment="Top" 
                             Foreground="#8877a9 " Height="28" Width="139" RenderTransformOrigin="0.433,0.599" Margin="20,12,0,0" Grid.Row="1"/>
-                        <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" VerticalAlignment="Top" Margin="0,45,0,0" Grid.RowSpan="2">
+                        <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" VerticalAlignment="Top" Margin="0,40,0,0" Grid.RowSpan="2">
                             <TextBlock Text="Single" FontWeight="Bold" FontFamily="Champagne &amp; Limousines" Foreground="Gray" FontSize="25"/>
                         </StackPanel>
                     </Grid>
                 </Grid>
 
                 <Grid Grid.Column="5" Margin="0,0,50,0">
-                    <Rectangle MouseDown="watch_view"  Height="90" Margin="20,40,20,40" Fill="White" RadiusY="10" RadiusX="10" Cursor="Hand">
+                    <Rectangle MouseDown="watch_view"  Height="70" Margin="20,40,20,40" Fill="White" RadiusY="10" RadiusX="10" Cursor="Hand">
                         <Rectangle.Effect>
                             <DropShadowEffect BlurRadius="20" Color="#FFDEDEDE" RenderingBias="Quality" ShadowDepth="1"/>
                         </Rectangle.Effect>
                     </Rectangle>
-                    <Grid Margin="0,0,0,0" Height="90">
+                    <Grid Margin="0,0,0,0" Height="70">
                         <TextBlock Text="ATC" HorizontalAlignment="Center" FontFamily="Champagne &amp; Limousines" Margin="0,15,0,0" 
                                    Foreground="Gray" FontSize="22"/>
                         <TextBlock Text="Watch Briefing" HorizontalAlignment="Center" FontFamily="Champagne &amp; Limousines" Margin="0,40,0,0" 
@@ -126,146 +128,187 @@
                            Margin="31,0,0,0" VerticalAlignment="Top" Foreground="Gray" Height="28" Width="173" Grid.Row="1" Grid.ColumnSpan="2"/>
 
                 <Grid Grid.Row="1" Grid.Column="0" Margin="0,0,32,0">
-                    <Rectangle Height="90" Margin="20,40,20,40" Fill="White" RadiusY="10" RadiusX="10" Cursor="Hand">
+                    <Rectangle Height="70" Margin="20,35,20,40" Fill="White" RadiusY="10" RadiusX="10" Cursor="Hand">
                         <Rectangle.Effect>
                             <DropShadowEffect BlurRadius="20" Color="#FFDEDEDE" RenderingBias="Quality" ShadowDepth="1"/>
                         </Rectangle.Effect>
                     </Rectangle>
-                    <Grid Margin="0,0,0,0" Height="90">
-                        <TextBlock Text="OMDB" FontSize="25" HorizontalAlignment="Center" 
+                    <Grid Margin="0,0,0,0" Height="70">
+                        <TextBlock Text="OMDB" FontSize="20" HorizontalAlignment="Center" 
                             FontFamily="Champagne &amp; Limousines" VerticalAlignment="Top" 
                             Foreground="#8877a9 " Height="28" Width="139" RenderTransformOrigin="0.433,0.599" Margin="20,12,0,0" Grid.Row="1"/>
-                        <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" VerticalAlignment="Top" Margin="0,45,0,0" Grid.RowSpan="2">
-                            <TextBlock Text="ARRIVAL 30L" HorizontalAlignment="Center" FontWeight="Bold" FontFamily="Champagne &amp; Limousines" Foreground="Gray" FontSize="15"/>
-                            <TextBlock Text="DEPARTURE 30L" HorizontalAlignment="Center" FontWeight="Bold" FontFamily="Champagne &amp; Limousines" Foreground="Gray" FontSize="15"/>
-
+                        <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" VerticalAlignment="Top" Margin="-10,35,0,0" Grid.RowSpan="2">
+                            <TextBlock Text="ARRIVAL" Margin="0,0,0,0" FontFamily="Champagne &amp; Limousines" Foreground="Gray" FontSize="12"/>
+                            <TextBlock Text="30L" Margin="30,-25,0,0" FontWeight="Bold" FontFamily="Champagne &amp; Limousines" Foreground="Gray" FontSize="15" Height="15"/>
+                            <TextBlock Text="DEPARTURE" Margin="-145,20,0,0" HorizontalAlignment="Center" 
+                                       FontFamily="Champagne &amp; Limousines" Foreground="Gray" FontSize="12"/>
+                            <TextBlock Text="30R" Margin="-25,15,0,0" FontWeight="Bold" FontFamily="Champagne &amp; Limousines" Foreground="Gray" FontSize="15" Height="15"/>
                         </StackPanel>
                     </Grid>
                 </Grid>
-                
-                
+
+                <Grid  Grid.Row="1" Grid.Column="1" Margin="0,0,32,0">
+                    <Rectangle Height="70" Margin="20,40,20,40" Fill="White" RadiusY="10" RadiusX="10" Cursor="Hand" >
+                        <Rectangle.Effect>
+                            <DropShadowEffect BlurRadius="20" Color="#FFDEDEDE" RenderingBias="Quality" ShadowDepth="1"/>
+                        </Rectangle.Effect>
+                    </Rectangle>
+                    <Grid Margin="0,0,0,0" Height="70">
+                        <TextBlock Text="MET" HorizontalAlignment="Center" FontSize="25" FontFamily="Champagne &amp; Limousines" VerticalAlignment="Top" 
+                            Foreground="#8877a9 " Height="28" RenderTransformOrigin="0.433,0.599" Margin="0,12,12,0"/>
+                        <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" VerticalAlignment="Top" Margin="0,40,0,0" Grid.RowSpan="2">
+                            <TextBlock Text="VMC" Margin="0,0,0,0" FontWeight="Bold" FontFamily="Champagne &amp; Limousines" 
+                                       Foreground="#4DB3A2" FontSize="25"/>
+                        </StackPanel>
+                    </Grid>
+                </Grid>
 
                 <Grid Grid.Row="2" Grid.Column="0" Margin="0,0,32,0">
-                    <Rectangle Height="120" Margin="20,40,-9,40" Fill="White" RadiusY="10" RadiusX="10" >
+                    <Rectangle Height="70" Margin="20,40,20,40" Fill="White" RadiusY="10" RadiusX="10" Cursor="Hand">
                         <Rectangle.Effect>
                             <DropShadowEffect BlurRadius="20" Color="#FFDEDEDE" RenderingBias="Quality" ShadowDepth="1"/>
                         </Rectangle.Effect>
                     </Rectangle>
-                    <Grid Margin="25" Height="120">
-                        <TextBlock Text="OMDW" FontSize="22" HorizontalAlignment="Left" FontFamily="Champagne &amp; Limousines" VerticalAlignment="Top" Foreground="#D91E18 " Height="28" Width="142" RenderTransformOrigin="0.433,0.599" Margin="25,30,0,0"/>
-                        <TextBlock Text="ARRIVAL 30L" FontSize="18" HorizontalAlignment="Stretch" FontFamily="Champagne &amp; Limousines" VerticalAlignment="Top" 
-                                   Foreground="#4DB3A2 " Height="28" Width="154" RenderTransformOrigin="0.433,0.599" Margin="110,32,0,0"/>
-                        <TextBlock Text="DEPARTURE 30R" FontSize="18" HorizontalAlignment="Stretch" FontFamily="Champagne &amp; Limousines" VerticalAlignment="Top" 
-                                   Foreground="#4DB3A2 " Height="28" Width="142" RenderTransformOrigin="0.433,0.599" Margin="110,62,0,0"/>
-
-                    </Grid>
-                </Grid>
-
-                <Grid  Grid.Row="1" Grid.Column="1">
-                    <Rectangle Height="120" Margin="20" Fill="White" RadiusY="10" RadiusX="10" >
-                        <Rectangle.Effect>
-                            <DropShadowEffect BlurRadius="20" Color="#FFDEDEDE" RenderingBias="Quality" ShadowDepth="1"/>
-                        </Rectangle.Effect>
-                    </Rectangle>
-                    <Grid Margin="25" Height="120">
-                        <TextBlock Text="MET " FontSize="30" HorizontalAlignment="Right" FontFamily="Champagne &amp; Limousines" Margin="0,31,162,0" VerticalAlignment="Top" Foreground="Gray" Height="32" Width="95"/>
-                        <StackPanel Orientation="Horizontal" HorizontalAlignment="Right" VerticalAlignment="Top" Margin="10 30">
-                            <TextBlock Margin="0,0,10,0" Foreground="#4DB3A2 " Text="VMC" FontFamily="Champagne &amp; Limousines" VerticalAlignment="Center" FontSize="30"/>
+                    <Grid Margin="0,0,0,0" Height="70">
+                        <TextBlock Text="OMDW" FontSize="20" HorizontalAlignment="Center" 
+                            FontFamily="Champagne &amp; Limousines" VerticalAlignment="Top" 
+                            Foreground="#8877a9 " Height="28" Width="139" RenderTransformOrigin="0.433,0.599" Margin="20,12,0,0" Grid.Row="1"/>
+                        <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" VerticalAlignment="Top" Margin="-10,35,0,0" Grid.RowSpan="2">
+                            <TextBlock Text="ARRIVAL" Margin="0,0,0,0" FontFamily="Champagne &amp; Limousines" Foreground="Gray" FontSize="12"/>
+                            <TextBlock Text="30L" Margin="30,-25,0,0" FontWeight="Bold" FontFamily="Champagne &amp; Limousines" Foreground="Gray" FontSize="15" Height="15"/>
+                            <TextBlock Text="DEPARTURE" Margin="-145,20,0,0" HorizontalAlignment="Center" 
+                                       FontFamily="Champagne &amp; Limousines" Foreground="Gray" FontSize="12"/>
+                            <TextBlock Text="30R" Margin="-25,15,0,0" FontWeight="Bold" FontFamily="Champagne &amp; Limousines" Foreground="Gray" FontSize="15" Height="15"/>
                         </StackPanel>
                     </Grid>
                 </Grid>
 
-                <Grid Grid.Row="2" Grid.Column="2" Margin="0,0,32,0">
-                    <Rectangle Height="120" Margin="20,40,-9,40" Fill="White" RadiusY="10" RadiusX="10" >
+                <Grid  Grid.Row="2" Grid.Column="1" Margin="0,0,32,0">
+                    <Rectangle Height="70" Margin="20,40,20,40" Fill="White" RadiusY="10" RadiusX="10" Cursor="Hand" >
                         <Rectangle.Effect>
                             <DropShadowEffect BlurRadius="20" Color="#FFDEDEDE" RenderingBias="Quality" ShadowDepth="1"/>
                         </Rectangle.Effect>
                     </Rectangle>
-                    <Grid Margin="25" Height="120">
-                        <TextBlock Text="EFTA" FontSize="22" HorizontalAlignment="Left" FontFamily="Champagne &amp; Limousines" VerticalAlignment="Top" Foreground="#D91E18 " Height="28" Width="142" RenderTransformOrigin="0.433,0.599" Margin="25,30,0,0"/>
-                        <TextBlock Text="ARRIVAL 30L" FontSize="18" HorizontalAlignment="Stretch" FontFamily="Champagne &amp; Limousines" VerticalAlignment="Top" 
-                                   Foreground="#4DB3A2 " Height="28" Width="154" RenderTransformOrigin="0.433,0.599" Margin="110,32,0,0"/>
-                        <TextBlock Text="DEPARTURE 30R" FontSize="18" HorizontalAlignment="Stretch" FontFamily="Champagne &amp; Limousines" VerticalAlignment="Top" 
-                                   Foreground="#4DB3A2 " Height="28" Width="142" RenderTransformOrigin="0.433,0.599" Margin="110,62,0,0"/>
-
+                    <Grid Margin="0,0,0,0" Height="70">
+                        <TextBlock Text="MET" HorizontalAlignment="Center" FontSize="25" FontFamily="Champagne &amp; Limousines" VerticalAlignment="Top" 
+                            Foreground="#8877a9 " Height="28" RenderTransformOrigin="0.433,0.599" Margin="0,12,12,0"/>
+                        <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" VerticalAlignment="Top" Margin="0,40,0,0" Grid.RowSpan="2">
+                            <TextBlock Text="VMC" Margin="0,0,0,0" FontWeight="Bold" FontFamily="Champagne &amp; Limousines" 
+                                       Foreground="#4DB3A2" FontSize="25"/>
+                        </StackPanel>
                     </Grid>
                 </Grid>
 
                 <Grid Grid.Row="3" Grid.Column="0" Margin="0,0,32,0">
-                    <Rectangle Height="120" Margin="20,40,-9,40" Fill="White" RadiusY="10" RadiusX="10" >
+                    <Rectangle Height="70" Margin="20,40,20,40" Fill="White" RadiusY="10" RadiusX="10" Cursor="Hand">
                         <Rectangle.Effect>
                             <DropShadowEffect BlurRadius="20" Color="#FFDEDEDE" RenderingBias="Quality" ShadowDepth="1"/>
                         </Rectangle.Effect>
                     </Rectangle>
-                    <Grid Margin="25" Height="120">
-                        <TextBlock Text="OMSJ" FontSize="22" HorizontalAlignment="Left" FontFamily="Champagne &amp; Limousines" VerticalAlignment="Top" Foreground="#D91E18 " Height="28" Width="142" RenderTransformOrigin="0.433,0.599" Margin="25,30,0,0"/>
-                        <TextBlock Text="ARRIVAL 30L" FontSize="18" HorizontalAlignment="Stretch" FontFamily="Champagne &amp; Limousines" VerticalAlignment="Top" 
-                                   Foreground="#4DB3A2 " Height="28" Width="154" RenderTransformOrigin="0.433,0.599" Margin="110,32,0,0"/>
-                        <TextBlock Text="DEPARTURE 30R" FontSize="18" HorizontalAlignment="Stretch" FontFamily="Champagne &amp; Limousines" VerticalAlignment="Top" 
-                                   Foreground="#4DB3A2 " Height="28" Width="142" RenderTransformOrigin="0.433,0.599" Margin="110,62,0,0"/>
-
+                    <Grid Margin="0,0,0,0" Height="70">
+                        <TextBlock Text="EFTA" FontSize="20" HorizontalAlignment="Center" 
+                            FontFamily="Champagne &amp; Limousines" VerticalAlignment="Top" 
+                            Foreground="#8877a9 " Height="28" Width="139" RenderTransformOrigin="0.433,0.599" Margin="20,12,0,0" Grid.Row="1"/>
+                        <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" VerticalAlignment="Top" Margin="-10,35,0,0" Grid.RowSpan="2">
+                            <TextBlock Text="ARRIVAL" Margin="0,0,0,0" FontFamily="Champagne &amp; Limousines" Foreground="Gray" FontSize="12"/>
+                            <TextBlock Text="30L" Margin="30,-25,0,0" FontWeight="Bold" FontFamily="Champagne &amp; Limousines" Foreground="Gray" FontSize="15" Height="15"/>
+                            <TextBlock Text="DEPARTURE" Margin="-145,20,0,0" HorizontalAlignment="Center" 
+                                       FontFamily="Champagne &amp; Limousines" Foreground="Gray" FontSize="12"/>
+                            <TextBlock Text="30R" Margin="-25,15,0,0" FontWeight="Bold" FontFamily="Champagne &amp; Limousines" Foreground="Gray" FontSize="15" Height="15"/>
+                        </StackPanel>
                     </Grid>
                 </Grid>
 
-                <Grid  Grid.Row="3" Grid.Column="1">
-                    <Rectangle Height="120" Margin="20" Fill="White" RadiusY="10" RadiusX="10" >
+                <Grid  Grid.Row="3" Grid.Column="1" Margin="0,0,32,0">
+                    <Rectangle Height="70" Margin="20,40,20,40" Fill="White" RadiusY="10" RadiusX="10" Cursor="Hand" >
                         <Rectangle.Effect>
                             <DropShadowEffect BlurRadius="20" Color="#FFDEDEDE" RenderingBias="Quality" ShadowDepth="1"/>
                         </Rectangle.Effect>
                     </Rectangle>
-                    <Grid Margin="25" Height="120">
-                        <TextBlock Text="MET " FontSize="30" HorizontalAlignment="Right" FontFamily="Champagne &amp; Limousines" Margin="0,31,162,0" VerticalAlignment="Top" Foreground="Gray" Height="32" Width="95"/>
-                        <StackPanel Orientation="Horizontal" HorizontalAlignment="Right" VerticalAlignment="Top" Margin="10 30">
-                            <TextBlock Margin="0,0,10,0" Foreground="#4DB3A2 " Text="VMC" FontFamily="Champagne &amp; Limousines" VerticalAlignment="Center" FontSize="30"/>
+                    <Grid Margin="0,0,0,0" Height="70">
+                        <TextBlock Text="MET" HorizontalAlignment="Center" FontSize="25" FontFamily="Champagne &amp; Limousines" VerticalAlignment="Top" 
+                            Foreground="#8877a9 " Height="28" RenderTransformOrigin="0.433,0.599" Margin="0,12,12,0"/>
+                        <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" VerticalAlignment="Top" Margin="0,40,0,0" Grid.RowSpan="2">
+                            <TextBlock Text="VMC" Margin="0,0,0,0" FontWeight="Bold" FontFamily="Champagne &amp; Limousines" 
+                                       Foreground="#4DB3A2" FontSize="25"/>
+                        </StackPanel>
+                    </Grid>
+                </Grid>
+
+                <Grid Grid.Row="4" Grid.Column="0" Margin="0,0,32,0">
+                    <Rectangle Height="70" Margin="20,40,20,40" Fill="White" RadiusY="10" RadiusX="10" Cursor="Hand">
+                        <Rectangle.Effect>
+                            <DropShadowEffect BlurRadius="20" Color="#FFDEDEDE" RenderingBias="Quality" ShadowDepth="1"/>
+                        </Rectangle.Effect>
+                    </Rectangle>
+                    <Grid Margin="0,0,0,0" Height="70">
+                        <TextBlock Text="OMSJ" FontSize="20" HorizontalAlignment="Center" 
+                            FontFamily="Champagne &amp; Limousines" VerticalAlignment="Top" 
+                            Foreground="#8877a9 " Height="28" Width="139" RenderTransformOrigin="0.433,0.599" Margin="20,12,0,0" Grid.Row="1"/>
+                        <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" VerticalAlignment="Top" Margin="-10,35,0,0" Grid.RowSpan="2">
+                            <TextBlock Text="ARRIVAL" Margin="0,0,0,0" FontFamily="Champagne &amp; Limousines" Foreground="Gray" FontSize="12"/>
+                            <TextBlock Text="30L" Margin="30,-25,0,0" FontWeight="Bold" FontFamily="Champagne &amp; Limousines" Foreground="Gray" FontSize="15" Height="15"/>
+                            <TextBlock Text="DEPARTURE" Margin="-145,20,0,0" HorizontalAlignment="Center" 
+                                       FontFamily="Champagne &amp; Limousines" Foreground="Gray" FontSize="12"/>
+                            <TextBlock Text="30R" Margin="-25,15,0,0" FontWeight="Bold" FontFamily="Champagne &amp; Limousines" Foreground="Gray" FontSize="15" Height="15"/>
+                        </StackPanel>
+                    </Grid>
+                </Grid>
+
+                <Grid  Grid.Row="4" Grid.Column="1" Margin="0,0,32,0">
+                    <Rectangle Height="70" Margin="20,40,20,40" Fill="White" RadiusY="10" RadiusX="10" Cursor="Hand" >
+                        <Rectangle.Effect>
+                            <DropShadowEffect BlurRadius="20" Color="#FFDEDEDE" RenderingBias="Quality" ShadowDepth="1"/>
+                        </Rectangle.Effect>
+                    </Rectangle>
+                    <Grid Margin="0,0,0,0" Height="70">
+                        <TextBlock Text="MET" HorizontalAlignment="Center" FontSize="25" FontFamily="Champagne &amp; Limousines" VerticalAlignment="Top" 
+                            Foreground="#8877a9 " Height="28" RenderTransformOrigin="0.433,0.599" Margin="0,12,12,0"/>
+                        <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" VerticalAlignment="Top" Margin="0,40,0,0" Grid.RowSpan="2">
+                            <TextBlock Text="VMC" Margin="0,0,0,0" FontWeight="Bold" FontFamily="Champagne &amp; Limousines" 
+                                       Foreground="#4DB3A2" FontSize="25"/>
+                        </StackPanel>
+                    </Grid>
+                </Grid>
+
+                <Grid Grid.Row="5" Grid.Column="0" Margin="0,0,32,0">
+                    <Rectangle Height="70" Margin="20,40,20,40" Fill="White" RadiusY="10" RadiusX="10" Cursor="Hand">
+                        <Rectangle.Effect>
+                            <DropShadowEffect BlurRadius="20" Color="#FFDEDEDE" RenderingBias="Quality" ShadowDepth="1"/>
+                        </Rectangle.Effect>
+                    </Rectangle>
+                    <Grid Margin="0,0,0,0" Height="70">
+                        <TextBlock Text="OMDBM" FontSize="20" HorizontalAlignment="Center" 
+                            FontFamily="Champagne &amp; Limousines" VerticalAlignment="Top" 
+                            Foreground="#8877a9 " Height="28" Width="139" RenderTransformOrigin="0.433,0.599" Margin="20,12,0,0" Grid.Row="1"/>
+                        <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" VerticalAlignment="Top" Margin="-10,35,0,0" Grid.RowSpan="2">
+                            <TextBlock Text="ARRIVAL" Margin="0,0,0,0" FontFamily="Champagne &amp; Limousines" Foreground="Gray" FontSize="12"/>
+                            <TextBlock Text="30L" Margin="30,-25,0,0" FontWeight="Bold" FontFamily="Champagne &amp; Limousines" Foreground="Gray" FontSize="15" Height="15"/>
+                            <TextBlock Text="DEPARTURE" Margin="-145,20,0,0" HorizontalAlignment="Center" 
+                                       FontFamily="Champagne &amp; Limousines" Foreground="Gray" FontSize="12"/>
+                            <TextBlock Text="30R" Margin="-25,15,0,0" FontWeight="Bold" FontFamily="Champagne &amp; Limousines" Foreground="Gray" FontSize="15" Height="15"/>
+                        </StackPanel>
+                    </Grid>
+                </Grid>
+
+                <Grid  Grid.Row="5" Grid.Column="1" Margin="0,0,32,0">
+                    <Rectangle Height="70" Margin="20,40,20,40" Fill="White" RadiusY="10" RadiusX="10" Cursor="Hand" >
+                        <Rectangle.Effect>
+                            <DropShadowEffect BlurRadius="20" Color="#FFDEDEDE" RenderingBias="Quality" ShadowDepth="1"/>
+                        </Rectangle.Effect>
+                    </Rectangle>
+                    <Grid Margin="0,0,0,0" Height="70">
+                        <TextBlock Text="MET" HorizontalAlignment="Center" FontSize="25" FontFamily="Champagne &amp; Limousines" VerticalAlignment="Top" 
+                            Foreground="#8877a9 " Height="28" RenderTransformOrigin="0.433,0.599" Margin="0,12,12,0"/>
+                        <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" VerticalAlignment="Top" Margin="0,40,0,0" Grid.RowSpan="2">
+                            <TextBlock Text="VMC" Margin="0,0,0,0" FontWeight="Bold" FontFamily="Champagne &amp; Limousines" 
+                                       Foreground="#4DB3A2" FontSize="25"/>
                         </StackPanel>
                     </Grid>
                 </Grid>
 
 
-                <Grid Grid.Row="3" Grid.Column="2" Margin="0,0,32,0">
-                    <Rectangle Height="120" Margin="20,40,-9,40" Fill="White" RadiusY="10" RadiusX="10" >
-                        <Rectangle.Effect>
-                            <DropShadowEffect BlurRadius="20" Color="#FFDEDEDE" RenderingBias="Quality" ShadowDepth="1"/>
-                        </Rectangle.Effect>
-                    </Rectangle>
-                    <Grid Margin="25" Height="120">
-                        <TextBlock Text="OMDM" FontSize="22" HorizontalAlignment="Left" FontFamily="Champagne &amp; Limousines" VerticalAlignment="Top" Foreground="#D91E18 " Height="28" Width="142" RenderTransformOrigin="0.433,0.599" Margin="25,30,0,0"/>
-                        <TextBlock Text="ARRIVAL 30L" FontSize="18" HorizontalAlignment="Stretch" FontFamily="Champagne &amp; Limousines" VerticalAlignment="Top" 
-                                   Foreground="#4DB3A2 " Height="28" Width="154" RenderTransformOrigin="0.433,0.599" Margin="110,32,0,0"/>
-                        <TextBlock Text="DEPARTURE 30R" FontSize="18" HorizontalAlignment="Stretch" FontFamily="Champagne &amp; Limousines" VerticalAlignment="Top" 
-                                   Foreground="#4DB3A2 " Height="28" Width="142" RenderTransformOrigin="0.433,0.599" Margin="110,62,0,0"/>
 
-                    </Grid>
-                </Grid>
-
-                <Grid  Grid.Row="3" Grid.Column="3">
-                    <Rectangle Height="120" Margin="20" Fill="White" RadiusY="10" RadiusX="10" >
-                        <Rectangle.Effect>
-                            <DropShadowEffect BlurRadius="20" Color="#FFDEDEDE" RenderingBias="Quality" ShadowDepth="1"/>
-                        </Rectangle.Effect>
-                    </Rectangle>
-                    <Grid Margin="25" Height="120">
-                        <TextBlock Text="MET " FontSize="30" HorizontalAlignment="Right" FontFamily="Champagne &amp; Limousines" Margin="0,31,162,0" VerticalAlignment="Top" Foreground="Gray" Height="32" Width="95"/>
-                        <StackPanel Orientation="Horizontal" HorizontalAlignment="Right" VerticalAlignment="Top" Margin="10 30">
-                            <TextBlock Margin="0,0,10,0" Foreground="#4DB3A2 " Text="VMC" FontFamily="Champagne &amp; Limousines" VerticalAlignment="Center" FontSize="30"/>
-                        </StackPanel>
-                    </Grid>
-                </Grid>
-
-
-                <Grid  Grid.Row="2" Grid.Column="3">
-                    <Rectangle Height="120" Margin="20" Fill="White" RadiusY="10" RadiusX="10" >
-                        <Rectangle.Effect>
-                            <DropShadowEffect BlurRadius="20" Color="#FFDEDEDE" RenderingBias="Quality" ShadowDepth="1"/>
-                        </Rectangle.Effect>
-                    </Rectangle>
-                    <Grid Margin="25" Height="120">
-                        <TextBlock Text="MET " FontSize="30" HorizontalAlignment="Right" FontFamily="Champagne &amp; Limousines" Margin="0,31,162,0" VerticalAlignment="Top" Foreground="Gray" Height="32" Width="95"/>
-                        <StackPanel Orientation="Horizontal" HorizontalAlignment="Right" VerticalAlignment="Top" Margin="10 30">
-                            <TextBlock Margin="0,0,10,0" Foreground="#4DB3A2 " Text="VMC" FontFamily="Champagne &amp; Limousines" VerticalAlignment="Center" FontSize="30"/>
-                        </StackPanel>
-                    </Grid>
-                </Grid>
 
 
                 <Grid Grid.Row="2" Grid.Column="4">
@@ -290,47 +333,8 @@
                     </Grid>
                 </Grid>
 
-                <Grid  Grid.Row="2" Grid.Column="1">
-                    <Rectangle Height="120" Margin="20" Fill="White" RadiusY="10" RadiusX="10" >
-                        <Rectangle.Effect>
-                            <DropShadowEffect BlurRadius="20" Color="#FFDEDEDE" RenderingBias="Quality" ShadowDepth="1"/>
-                        </Rectangle.Effect>
-                    </Rectangle>
-                    <Grid Margin="25" Height="120">
-                        <TextBlock Text="MET " FontSize="30" HorizontalAlignment="Right" FontFamily="Champagne &amp; Limousines" Margin="0,31,162,0" VerticalAlignment="Top" Foreground="Gray" Height="32" Width="95"/>
-                        <StackPanel Orientation="Horizontal" HorizontalAlignment="Right" VerticalAlignment="Top" Margin="10 30">
-                            <TextBlock Margin="0,0,10,0" Foreground="#4DB3A2 " Text="VMC" FontFamily="Champagne &amp; Limousines" VerticalAlignment="Center" FontSize="30"/>
-                        </StackPanel>
-                    </Grid>
-                </Grid>
-
-
-
-                
-
-
-                <Grid Grid.Row="1" Grid.Column="3">
-                    <Rectangle MouseDown="fault_modal" Cursor="Hand" Height="120" Margin="20" Fill="White" RadiusY="10" RadiusX="10" >
-                        <Rectangle.Effect>
-                            <DropShadowEffect BlurRadius="20" Color="#FFDEDEDE" RenderingBias="Quality" ShadowDepth="1"/>
-                        </Rectangle.Effect>
-                    </Rectangle>
-                    <Grid Margin="25" Height="120">
-                        <TextBlock Text="Fault Reporting " FontSize="25" HorizontalAlignment="Center" FontFamily="Champagne &amp; Limousines" Margin="0,35,0,0" VerticalAlignment="Top" Foreground="Gray" Height="40" Width="178"/>
-                    </Grid>
-                </Grid>
-
-                <Grid Grid.Row="1" Grid.Column="2">
-                    <Rectangle MouseDown="gen_modal" Cursor="Hand" Height="120" Margin="20" Fill="White" RadiusY="10" RadiusX="10" >
-                        <Rectangle.Effect>
-                            <DropShadowEffect BlurRadius="20" Color="#FFDEDEDE" RenderingBias="Quality" ShadowDepth="1"/>
-                        </Rectangle.Effect>
-                    </Rectangle>
-                    <Grid Margin="25" Height="120">
-                        <TextBlock Text="General Entry " FontSize="25" HorizontalAlignment="Center" FontFamily="Champagne &amp; Limousines" Margin="0,35,0,0" VerticalAlignment="Top" Foreground="Gray" Height="45" Width="168"/>
-                    </Grid>
-                </Grid>
                
+
 
             </Grid>
         </Grid>
