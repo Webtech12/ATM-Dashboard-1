@@ -12,6 +12,7 @@ namespace ATM_Dashboard1.helper
         private static DataTable dt;
         private static MySqlDataAdapter sda;
 
+
         // Connection to the database
         public static void EstablishConn()
         {

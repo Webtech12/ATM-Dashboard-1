@@ -35,20 +35,20 @@
 
             <Grid Grid.Row="0" Grid.Column="1" VerticalAlignment="Top" Margin="0,48,0,0" Height="65">
                 <StackPanel VerticalAlignment="Top" Margin="15,27,15,0">
-                    <DatePicker  materialDesign:HintAssist.Hint="Date" Style="{StaticResource MaterialDesignDatePicker}" FontFamily="Champagne &amp; Limousines" />
+                    <DatePicker Name="txtdate"  materialDesign:HintAssist.Hint="Date" Style="{StaticResource MaterialDesignDatePicker}" FontFamily="Champagne &amp; Limousines" />
                 </StackPanel>
             </Grid>
 
             <Grid Grid.Row="1" Grid.Column="0" VerticalAlignment="Top" Margin="0,50,0,0" Height="65">
                 <StackPanel VerticalAlignment="Center" Margin="15,-10,15,0">
-                    <materialDesign:TimePicker></materialDesign:TimePicker>
+                    <materialDesign:TimePicker x:Name="txttime"></materialDesign:TimePicker>
                 </StackPanel>
             </Grid>
 
             <Grid Grid.Row="1" Grid.Column="1" VerticalAlignment="Top" Margin="0,50,0,0" Height="65">
                 <StackPanel VerticalAlignment="Center" Margin="15,-30,15,0">
                     <TextBlock>On Behalf</TextBlock>
-                    <ComboBox>
+                    <ComboBox Name="txtOnbehalf">
                         <ComboBoxItem>ComboBox Item #1</ComboBoxItem>
                         <ComboBoxItem IsSelected="True">ComboBox Item #2</ComboBoxItem>
                         <ComboBoxItem>ComboBox Item #3</ComboBoxItem>
@@ -60,7 +60,7 @@
             <Grid Grid.Row="2" Grid.Column="0" VerticalAlignment="Top" Margin="0,50,0,0" Height="65">
                 <StackPanel VerticalAlignment="Center" Margin="15,-30,15,0">
                     <TextBlock>Subject</TextBlock>
-                    <ComboBox>
+                    <ComboBox Name="txtsubject">
                         <ComboBoxItem>ComboBox Item #1</ComboBoxItem>
                         <ComboBoxItem IsSelected="True">ComboBox Item #2</ComboBoxItem>
                         <ComboBoxItem>ComboBox Item #3</ComboBoxItem>
@@ -71,7 +71,7 @@
             <Grid Grid.Row="2" Grid.Column="1" VerticalAlignment="Top" Margin="0,50,0,0" Height="65">
                 <StackPanel VerticalAlignment="Center" Margin="15,-30,15,0">
                     <TextBlock>Rate</TextBlock>
-                    <ComboBox>
+                    <ComboBox Name="txtrate">
                         <ComboBoxItem>ComboBox Item #1</ComboBoxItem>
                         <ComboBoxItem IsSelected="True">ComboBox Item #2</ComboBoxItem>
                         <ComboBoxItem>ComboBox Item #3</ComboBoxItem>
@@ -82,7 +82,7 @@
             <Grid Grid.Row="3" Grid.Column="0" VerticalAlignment="Top" Margin="0,50,0,0" Height="65">
                 <StackPanel VerticalAlignment="Center" Margin="15,-30,15,0">
                     <TextBlock>Status</TextBlock>
-                    <ComboBox>
+                    <ComboBox Name="txtstatus">
                         <ComboBoxItem>Open</ComboBoxItem>
                         <ComboBoxItem IsSelected="True">Close</ComboBoxItem>
                         <ComboBoxItem>Follow-Up</ComboBoxItem>
@@ -115,8 +115,7 @@
 
         </Grid>
 
-        <Button Width="150" HorizontalAlignment="Center" VerticalAlignment="Bottom" Margin="0,0,0,20" Content="Submit" Background="#FF45B6AF" 
-                BorderBrush="#FF45B6AF"/>
+        <Button Width="150" Click="aman_submit" HorizontalAlignment="Center" VerticalAlignment="Bottom" Margin="0,0,0,20" Content="Submit" Background="#FF45B6AF" BorderBrush="#FF45B6AF"/>
 
     </Grid>
 
