@@ -89,6 +89,11 @@ namespace ATM_Dashboard1.helper
             input = '"'+input+'"';
             string query = "SELECT " + column + " FROM atmars_testdb." + table + " where " + reference + " = "+input+" limit 1";
             return query;
+        } 
+        public  static string GetUnitUsers()
+        {
+            string query = "SELECT * FROM atmars_testdb.tblagent";
+            return query;
         }
 
 
