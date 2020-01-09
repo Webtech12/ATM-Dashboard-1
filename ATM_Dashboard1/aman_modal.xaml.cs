@@ -33,24 +33,31 @@ namespace ATM_Dashboard1
             try
             {
                 var datetime = txtdate.SelectedDate.Value.Date.ToShortDateString().ToString() + " " + txttime.SelectedTime.Value.ToLongTimeString().ToString();
-                string insertQuery = "INSERT INTO atmars_testdb.generalentry(initial,onbehalf,subject,description," +
+                var query = DBhelper.GetQuery("tblagent","agentcode","agentname", txinitial.Text);
+
+                /* string insertQuery = "INSERT INTO atmars_testdb.generalentry(initial,onbehalf,subject,description," +
                     "datetime,frn,frnstatus,actions,management,ate," +
                     "roci,status,ari_kpi,dep_kpi,dans,updated,form_id,closed_at)" +
                     " VALUES('" + txinitial.Text + "','" + txtOnbehalf.Text + "'," + txtsubject.Text + "'," + txtrate.Text + " " + txdesc.Text + "" +
                     "'," + datetime + "'," + null + "'," + null + "'," + null + "'," + null + "'," + null + "" +
                     "'," + txtrosi.Text + "'," + txtstatus.Text + "'," + null + "'," + null + "'," + null + "" +
-                    "'," + null + "'," + null + "'," + null + ")";
+                    "'," + null + "'," + null + "'," + null + ")"; */
 
-                cmd = DBhelper.RunQuery(insertQuery, txinitial.Text);
+                cmd = DBhelper.GetRelation(query);
+                //MessageBox.Show(query);
+
                 if (cmd != null)
                 {
-                    MessageBox.Show("Data Inserted");
+                    dt = new DataTable();
+                    sda = new MySqlDataAdapter(cmd);
+                    sda.Fill(dt);
+                    foreach (DataRow dr in dt.Rows)
+                    {
+                        string uId = dr["agentcode"].ToString();
+                         //string password = dr["agentpassword"].ToString(); 
+                        MessageBox.Show(uId);
+                    }
                 }
-                else
-                {
-                    MessageBox.Show("Data Not Inserted");
-                }
-
 
             }
             catch (Exception ex)

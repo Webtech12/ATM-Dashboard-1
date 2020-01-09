@@ -14,7 +14,7 @@ namespace ATM_Dashboard1.DA_Layer
         public static Users RetrieveUser(string agentname)
         {
             string query = "SELECT * FROM atmars_testdb.tblagent where agentname = ?agentname limit 1";
-            cmd = DBhelper.RunQuery(query, agentname);
+            cmd = DBhelper.GetRelation(query, agentname);
             Users aUser = null;
             if (cmd != null)
             {

@@ -24,7 +24,7 @@ namespace ATM_Dashboard1.helper
                 builder.Database = "atmars_testdb";
                 builder.Password = "admin";
                 builder.SslMode = MySqlSslMode.None; */
-                connection = new MySqlConnection("datasource=localhost;port=3306;username=root;Convert Zero Datetime=True; password=");
+                connection = new MySqlConnection("datasource=localhost;port=3306;username=root;Convert Zero Datetime=True;; password=;AllowUserVariables=True;");
                 MessageBox.Show("Database connection successfull", "Connection", MessageBoxButton.OK);
             }
             catch (Exception e)
@@ -33,7 +33,7 @@ namespace ATM_Dashboard1.helper
             }
         }
 
-        public static MySqlCommand RunQuery(string query, string agentname)
+        public static MySqlCommand GetRelation(string query, string agentname)
         {
             try
             {
@@ -55,6 +55,40 @@ namespace ATM_Dashboard1.helper
                 connection.Close();
             }
             return cmd;
+        }
+
+
+        public static MySqlCommand GetRelation(string query)
+        {
+
+            try
+            {
+
+                if (connection != null)
+                {
+                    connection.Open();
+                    cmd = connection.CreateCommand();
+                    cmd.CommandType = CommandType.Text;
+                    cmd.CommandText = query;
+                    cmd.ExecuteNonQuery();
+
+                    connection.Close();
+                }
+            }
+            catch (Exception e)
+            {
+                MessageBox.Show("connection Failed" + e.Message);
+                connection.Close();
+            }
+
+            return cmd;
+        }
+
+        public  static string GetQuery(string table, string column, string reference, string input)
+        {
+            input = '"'+input+'"';
+            string query = "SELECT " + column + " FROM atmars_testdb." + table + " where " + reference + " = "+input+" limit 1";
+            return query;
         }
 
 
