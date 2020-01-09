@@ -58,6 +58,42 @@ namespace ATM_Dashboard1.helper
         }
 
 
+        public static MySqlCommand Insert(string query, string Initial, string Onbehalf, string Subject, 
+                                          string Desc, string datetime, int Roci,
+                                          string Status, string ARR, string DEP, string Dans)
+        {
+            try
+            {
+
+                if (connection != null)
+                {
+                    connection.Open();
+                    cmd = connection.CreateCommand();
+                    cmd.CommandType = CommandType.Text;
+                    cmd.CommandText = query;
+                    cmd.Parameters.AddWithValue("@initial", Initial);
+                    cmd.Parameters.AddWithValue("@onbehalf", Onbehalf);
+                    cmd.Parameters.AddWithValue("@subject", Subject);
+                    cmd.Parameters.AddWithValue("@description", Desc);
+                    cmd.Parameters.AddWithValue("@datetime", datetime);
+                    cmd.Parameters.AddWithValue("@roci", Roci);
+                    cmd.Parameters.AddWithValue("@status", Status);
+                    cmd.Parameters.AddWithValue("@ari_kpi", ARR);
+                    cmd.Parameters.AddWithValue("@dep_kpi", DEP);
+                    cmd.Parameters.AddWithValue("@dans", Dans);
+                    cmd.ExecuteNonQuery();
+                    connection.Close();
+                }
+            }
+            catch (Exception e)
+            {
+                MessageBox.Show("connection Failed" + e.Message);
+                connection.Close();
+            }
+            return cmd;
+        }
+
+
         public static MySqlCommand GetRelation(string query)
         {
 
@@ -77,7 +113,7 @@ namespace ATM_Dashboard1.helper
             }
             catch (Exception e)
             {
-                MessageBox.Show("connection Failed" + e.Message);
+                MessageBox.Show("connection Failed " + e.Message);
                 connection.Close();
             }
 
@@ -100,9 +136,6 @@ namespace ATM_Dashboard1.helper
             string query = "SELECT * FROM atmars_testdb.subjectform";
             return query;
         }
-
-
-
 
     }
 }

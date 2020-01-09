@@ -77,7 +77,7 @@
             <Grid Grid.Row="3" Grid.Column="0" VerticalAlignment="Top" Margin="0,50,0,0" Height="65">
                 <StackPanel VerticalAlignment="Center" Margin="15,-30,15,0">
                     <TextBlock>Status</TextBlock>
-                    <ComboBox Name="txtstatus">
+                    <ComboBox x:Name="status">
                         <ComboBoxItem>Open</ComboBoxItem>
                         <ComboBoxItem IsSelected="True">Close</ComboBoxItem>
                         <ComboBoxItem>Follow-Up</ComboBoxItem>
@@ -87,7 +87,7 @@
 
             <Grid Grid.Row="3" Grid.Column="1" VerticalAlignment="Top" Margin="0,50,0,0" Height="65">
                 <StackPanel VerticalAlignment="Top" Margin="15,-26,15,0">
-                    <TextBox Name="txdesc" AcceptsReturn="True" VerticalScrollBarVisibility="Visible" TextWrapping="Wrap" Margin="0,10" 
+                    <TextBox x:Name="des" AcceptsReturn="True" VerticalScrollBarVisibility="Visible" TextWrapping="Wrap" Margin="0,10" 
                            materialDesign:HintAssist.Hint="Description" Style="{StaticResource MaterialDesignFloatingHintTextBox}" 
                            FontFamily="Champagne &amp; Limousines" FontSize="16"/>
                 </StackPanel>
@@ -96,15 +96,15 @@
 
             <Grid Grid.Row="4" Grid.Column="0" VerticalAlignment="Top" Margin="0,50,0,0" Height="65">
                 <StackPanel VerticalAlignment="Center" Margin="15,-10,15,0">
-                    <TextBox Name="txtrosi" Margin="0,10" materialDesign:HintAssist.Hint="ROSI" Style="{StaticResource MaterialDesignFloatingHintTextBox}" FontFamily="Champagne &amp; Limousines" FontSize="16"/>
+                    <TextBox x:Name="roci" Margin="0,10" materialDesign:HintAssist.Hint="ROSI" Style="{StaticResource MaterialDesignFloatingHintTextBox}" FontFamily="Champagne &amp; Limousines" FontSize="16"/>
                 </StackPanel>
             </Grid>
 
             <Grid Grid.Row="4" Grid.Column="1" VerticalAlignment="Top" Margin="0,46,0,0" Height="65" Grid.RowSpan="2">
                 <StackPanel VerticalAlignment="Center" Margin="15,-10,15,0">
-                    <CheckBox>ARR KPI</CheckBox>
-                    <CheckBox>DEP KPI</CheckBox>
-                    <CheckBox>Dans Internal</CheckBox>
+                    <CheckBox x:Name="arr">ARR KPI</CheckBox>
+                    <CheckBox x:Name="dep">DEP KPI</CheckBox>
+                    <CheckBox x:Name="dans">Dans Internal</CheckBox>
                 </StackPanel>
             </Grid>
 
