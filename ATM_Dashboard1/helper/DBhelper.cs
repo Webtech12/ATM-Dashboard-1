@@ -95,6 +95,13 @@ namespace ATM_Dashboard1.helper
             string query = "SELECT * FROM atmars_testdb.tblagent";
             return query;
         }
+        public  static string GetSubjects()
+        {
+            string query = "SELECT * FROM atmars_testdb.subjectform";
+            return query;
+        }
+
+
 
 
     }

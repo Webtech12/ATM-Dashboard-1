@@ -49,10 +49,8 @@
             <Grid Grid.Row="1" Grid.Column="1" VerticalAlignment="Top" Margin="0,50,0,0" Height="65">
                 <StackPanel VerticalAlignment="Center" Margin="15,-30,15,0">
                     <TextBlock>On Behalf</TextBlock>
-                    <ComboBox>
-                        <ComboBoxItem>ComboBox Item #1</ComboBoxItem>
-                        <ComboBoxItem IsSelected="True">ComboBox Item #2</ComboBoxItem>
-                        <ComboBoxItem>ComboBox Item #3</ComboBoxItem>
+                    <ComboBox x:Name="Onbehalf">
+                        <ComboBoxItem IsSelected="True">Select</ComboBoxItem>
                     </ComboBox>
                 </StackPanel>
             </Grid>
@@ -61,10 +59,8 @@
             <Grid Grid.Row="2" Grid.Column="0" VerticalAlignment="Top" Margin="0,50,0,0" Height="65">
                 <StackPanel VerticalAlignment="Center" Margin="15,-30,15,0">
                     <TextBlock>Subject</TextBlock>
-                    <ComboBox Name="txtsubject">
-                        <ComboBoxItem>ComboBox Item #1</ComboBoxItem>
-                        <ComboBoxItem IsSelected="True">ComboBox Item #2</ComboBoxItem>
-                        <ComboBoxItem>ComboBox Item #3</ComboBoxItem>
+                    <ComboBox x:Name="subject">
+                        <ComboBoxItem IsSelected="True">Select</ComboBoxItem>
                     </ComboBox>
                 </StackPanel>
             </Grid>
@@ -72,10 +68,8 @@
             <Grid Grid.Row="2" Grid.Column="1" VerticalAlignment="Top" Margin="0,50,0,0" Height="65">
                 <StackPanel VerticalAlignment="Center" Margin="15,-30,15,0">
                     <TextBlock>Rate</TextBlock>
-                    <ComboBox Name="txtrate">
-                        <ComboBoxItem>ComboBox Item #1</ComboBoxItem>
-                        <ComboBoxItem IsSelected="True">ComboBox Item #2</ComboBoxItem>
-                        <ComboBoxItem>ComboBox Item #3</ComboBoxItem>
+                    <ComboBox x:Name="rate">
+                        <ComboBoxItem IsSelected="True">55</ComboBoxItem>
                     </ComboBox>
                 </StackPanel>
             </Grid>
