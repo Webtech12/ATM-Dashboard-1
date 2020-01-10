@@ -6,8 +6,10 @@ using System.Collections.Generic;
 using System.Data;
 using System.Globalization;
 using System.Linq;
+using System.Text.RegularExpressions;
 using System.Threading;
 using System.Windows;
+using System.Windows.Controls;
 
 namespace ATM_Dashboard1
 {
@@ -19,7 +21,6 @@ namespace ATM_Dashboard1
         private static MySqlCommand cmd = null;
         private static DataTable dt;
         private static MySqlDataAdapter sda;
-        //public static LoggedInUser loggedInUser;
 
         public aman_modal()
         {
@@ -33,6 +34,7 @@ namespace ATM_Dashboard1
             FillOnbehalf();
             FillSubjects();
             FillRate();
+           // GetClosetime();
     }
 
         void FillOnbehalf()
@@ -129,7 +131,7 @@ namespace ATM_Dashboard1
                     sda.Fill(dt);
                     foreach (DataRow dr in dt.Rows)
                     {
-                    sId = dr["id"].ToString();
+                        sId = dr["id"].ToString();
                     }
                 }
                 return sId;
@@ -138,8 +140,10 @@ namespace ATM_Dashboard1
         {
             if (status.Text == "Open")
             {
+                //close_time.Visibility = Visibility.Hidden;
                 status.Text = "1";
-            }if (status.Text == "Close")
+            }
+            if (status.Text == "Close")
             {
                 status.Text = "0";
             }if (status.Text == "Follow-Up")
@@ -148,6 +152,7 @@ namespace ATM_Dashboard1
             }
                 return status.Text;
         }
+
         public string GetARR()
         {
             if (arr.IsChecked.HasValue && arr.IsChecked.Value)
@@ -197,34 +202,73 @@ namespace ATM_Dashboard1
                 var Onbehalf = GetOnbehalf();
                 var Subject = GetSubjectId();
                 var Status = GetStatus();
-                var ARR = GetARR();
-                var DEP = GetDEP();
+                var Ari_kpi = GetARR();
+                var Dep_kpi = GetDEP();
                 var Dans = GetDans();
-                var Desc = rate.Text + " " + des.Text;
+                var closed_at = close_time.Text;
+                var Description = rate.Text + " " + des.Text;
                 var Roci = Convert.ToInt32(roci.Text);
-                MessageBox.Show(ARR);
-                //DBhelper.EstablishConn();
                 string insertQuery = "INSERT INTO atmars_testdb.generalentry(initial,onbehalf,subject,description,datetime,frn,frnstatus,actions,management,ate,roci,status,ari_kpi,dep_kpi,dans,updated,form_id,closed_at) " +
-                    "VALUES(@Initial,@Onbehalf,@Subject,@Desc,@datetime,'','','','','',@Roci,@Status,@ARR,@DEP,@Dans,'','','')";
-                cmd = DBhelper.Insert(insertQuery, Initial, Onbehalf, Subject, Desc, datetime, Roci, Status, ARR, DEP, Dans);
+                    "VALUES(@Initial,@Onbehalf,@Subject,@Description,@datetime,'','','','','',@Roci,@Status,@Ari_kpi,@Dep_kpi,@Dans,'','',@closed_at)";
+                cmd = DBhelper.Insert(insertQuery, Initial, Onbehalf, Subject, Description, datetime, Roci, Status, Ari_kpi, Dep_kpi, Dans, closed_at);
+                long insert_id = cmd.LastInsertedId;
+
                 if (cmd != null)
                 {
-                    MessageBox.Show(cmd.CommandText);
+                    var Units = DBhelper.getAgentUnits(int.Parse(Initial));
+                    cmd = DBhelper.GetRelation(Units);
+
+                    string agentUnit = null;
+                    if (cmd != null)
+                    {
+                        dt = new DataTable();
+                        sda = new MySqlDataAdapter(cmd);
+                        sda.Fill(dt);
+                        foreach (DataRow dr in dt.Rows)
+                        {
+                            agentUnit = dr["agentunit"].ToString();
+                            MessageBox.Show(agentUnit);
+                        }
+                    }
+
+                    /* string insertFormlog = "INSERT INTO atmars_testdb.form_logs(log_type,log_table,log_id,datetime) " +
+                    "VALUES(@Initial,@Onbehalf,@Subject,@Description,@datetime,'','','','','',@Roci,@Status,@Ari_kpi,@Dep_kpi,@Dans,'','',@closed_at)";
+                    cmd = DBhelper.Insert(insertFormlog, Initial, Onbehalf, Subject, Description, datetime, Roci, Status, Ari_kpi, Dep_kpi, Dans, closed_at); */
+                    MessageBox.Show("Insertion successful");
+                    this.Close();
                 }
                 else
                 {
                     MessageBox.Show("Insertion error");
                 }
-
-
             }
+            
             catch (Exception ex)
             {
                 MessageBox.Show("Fill in all the fields \n" + ex.Message);
             }
-           
-            
+        }
 
+        private void status_SelectionChanged(object sender, System.Windows.Controls.SelectionChangedEventArgs e)
+        {
+            try
+            {
+                string statusSelect = (e.AddedItems[0] as ComboBoxItem).Content as string;
+                if (statusSelect == "Close")
+                {
+                    close_time.Visibility = Visibility.Visible;
+                }
+                else
+                {
+                    close_time.Visibility = Visibility.Hidden;
+                    close_time.Text = "";
+                }
+            }
+            catch (Exception ex)
+            {
+                //MessageBox.Show(ex.Message);
+            }
+            
         }
     }
 }

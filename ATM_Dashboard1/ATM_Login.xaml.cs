@@ -48,16 +48,13 @@ namespace ATM_Dashboard1
                         txtpass.Password = "";
                     }
                 }
-                catch (Exception ex)
+                catch (Exception)
                 {
                     MessageBox.Show("Username not found ");
                 }
                
             }
 
-            /* MessageBox.Show($"Welocme: {txtname.Text} with password {txtpass.Password}");
-            MainWindow dashboard = new MainWindow();
-            dashboard.Show(); */
         }
     }
 }

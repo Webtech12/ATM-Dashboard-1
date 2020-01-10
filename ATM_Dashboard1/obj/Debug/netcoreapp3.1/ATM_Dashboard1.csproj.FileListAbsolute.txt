@@ -23,3 +23,4 @@ C:\Users\aaa\source\repos\ATM_Dashboard1\ATM_Dashboard1\obj\Debug\netcoreapp3.1\
 C:\Users\aaa\source\repos\ATM_Dashboard1\ATM_Dashboard1\obj\Debug\netcoreapp3.1\ATM_Dashboard1.csproj.CopyComplete
 C:\Users\aaa\source\repos\ATM_Dashboard1\ATM_Dashboard1\obj\Debug\netcoreapp3.1\ATM_Dashboard1.dll
 C:\Users\aaa\source\repos\ATM_Dashboard1\ATM_Dashboard1\obj\Debug\netcoreapp3.1\ATM_Dashboard1.pdb
+C:\Users\aaa\source\repos\ATM_Dashboard1\ATM_Dashboard1\obj\Debug\netcoreapp3.1\ATM_Dashboard1.csprojAssemblyReference.cache

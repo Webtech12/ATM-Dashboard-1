@@ -1,5 +1,6 @@
 ﻿using MySql.Data.MySqlClient;
 using System;
+using System.Collections.Generic;
 using System.Data;
 using System.Windows;
 
@@ -57,43 +58,6 @@ namespace ATM_Dashboard1.helper
             return cmd;
         }
 
-
-        public static MySqlCommand Insert(string query, string Initial, string Onbehalf, string Subject, 
-                                          string Desc, string datetime, int Roci,
-                                          string Status, string ARR, string DEP, string Dans)
-        {
-            try
-            {
-
-                if (connection != null)
-                {
-                    connection.Open();
-                    cmd = connection.CreateCommand();
-                    cmd.CommandType = CommandType.Text;
-                    cmd.CommandText = query;
-                    cmd.Parameters.AddWithValue("@initial", Initial);
-                    cmd.Parameters.AddWithValue("@onbehalf", Onbehalf);
-                    cmd.Parameters.AddWithValue("@subject", Subject);
-                    cmd.Parameters.AddWithValue("@description", Desc);
-                    cmd.Parameters.AddWithValue("@datetime", datetime);
-                    cmd.Parameters.AddWithValue("@roci", Roci);
-                    cmd.Parameters.AddWithValue("@status", Status);
-                    cmd.Parameters.AddWithValue("@ari_kpi", ARR);
-                    cmd.Parameters.AddWithValue("@dep_kpi", DEP);
-                    cmd.Parameters.AddWithValue("@dans", Dans);
-                    cmd.ExecuteNonQuery();
-                    connection.Close();
-                }
-            }
-            catch (Exception e)
-            {
-                MessageBox.Show("connection Failed" + e.Message);
-                connection.Close();
-            }
-            return cmd;
-        }
-
-
         public static MySqlCommand GetRelation(string query)
         {
 
@@ -107,7 +71,6 @@ namespace ATM_Dashboard1.helper
                     cmd.CommandType = CommandType.Text;
                     cmd.CommandText = query;
                     cmd.ExecuteNonQuery();
-
                     connection.Close();
                 }
             }
@@ -131,10 +94,56 @@ namespace ATM_Dashboard1.helper
             string query = "SELECT * FROM atmars_testdb.tblagent";
             return query;
         }
+
+        public  static string getAgentUnits(int Initial)
+        {
+            string query = "SELECT agentunit FROM atmars_testdb.tblagent where agentcode = " + Initial +" ";
+            return query;
+        }
+
         public  static string GetSubjects()
         {
             string query = "SELECT * FROM atmars_testdb.subjectform";
             return query;
+        }
+
+        // Insert query (overloaded method)
+        public static MySqlCommand Insert(string query, string Initial, string Onbehalf, string Subject,
+                                         string Description, string datetime, int Roci,
+                                         string Status, string Ari_kpi, string Dep_kpi, 
+                                         string Dans, string closed_at)
+        {
+            //MessageBox.Show(closed_at);
+            try
+            {
+                if (connection != null)
+                {
+                    connection.Open();
+                    cmd = connection.CreateCommand();
+                    cmd.CommandType = CommandType.Text;
+                    cmd.CommandText = query;
+                    cmd.Parameters.AddWithValue("@Initial", Initial);
+                    cmd.Parameters.AddWithValue("@onbehalf", Onbehalf);
+                    cmd.Parameters.AddWithValue("@subject", Subject);
+                    cmd.Parameters.AddWithValue("@description", Description);
+                    cmd.Parameters.AddWithValue("@datetime", datetime);
+                    cmd.Parameters.AddWithValue("@roci", Roci);
+                    cmd.Parameters.AddWithValue("@status", Status);
+                    cmd.Parameters.AddWithValue("@ari_kpi", Ari_kpi);
+                    cmd.Parameters.AddWithValue("@dep_kpi", Dep_kpi);
+                    cmd.Parameters.AddWithValue("@dans", Dans);
+                    cmd.Parameters.AddWithValue("@closed_at", closed_at);
+                    cmd.ExecuteNonQuery();
+                    
+                    connection.Close();
+                }
+            }
+            catch (Exception e)
+            {
+                MessageBox.Show("connection Failed" + e.Message);
+                connection.Close();
+            }
+            return cmd;
         }
 
     }

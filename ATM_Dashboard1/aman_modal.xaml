@@ -4,10 +4,11 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:sys="clr-namespace:System;assembly=mscorlib"
         xmlns:local="clr-namespace:ATM_Dashboard1"
         mc:Ignorable="d"
         ResizeMode="CanMinimize" FontFamily="Segoe UI Emoji"
-        Title="aman_modal" Height="650" Width="600">
+        Title="aman_modal" Height="750" Width="600">
 
     <Grid>
         <TextBlock Text="AMAN" FontSize="25" HorizontalAlignment="Center" FontFamily="Champagne &amp; Limousines" VerticalAlignment="Top" 
@@ -15,6 +16,7 @@
 
         <Grid>
             <Grid.RowDefinitions>
+                <RowDefinition Height="*"/>
                 <RowDefinition Height="*"/>
                 <RowDefinition Height="*"/>
                 <RowDefinition Height="*"/>
@@ -77,7 +79,7 @@
             <Grid Grid.Row="3" Grid.Column="0" VerticalAlignment="Top" Margin="0,50,0,0" Height="65">
                 <StackPanel VerticalAlignment="Center" Margin="15,-30,15,0">
                     <TextBlock>Status</TextBlock>
-                    <ComboBox x:Name="status">
+                    <ComboBox x:Name="status" SelectionChanged="status_SelectionChanged">
                         <ComboBoxItem>Open</ComboBoxItem>
                         <ComboBoxItem IsSelected="True">Close</ComboBoxItem>
                         <ComboBoxItem>Follow-Up</ComboBoxItem>
@@ -93,10 +95,17 @@
                 </StackPanel>
             </Grid>
 
-
             <Grid Grid.Row="4" Grid.Column="0" VerticalAlignment="Top" Margin="0,50,0,0" Height="65">
                 <StackPanel VerticalAlignment="Center" Margin="15,-10,15,0">
-                    <TextBox x:Name="roci" Margin="0,10" materialDesign:HintAssist.Hint="ROSI" Style="{StaticResource MaterialDesignFloatingHintTextBox}" FontFamily="Champagne &amp; Limousines" FontSize="16"/>
+                    <TextBox x:Name="roci" Margin="0,10" materialDesign:HintAssist.Hint="ROSI" Text="0"
+                             Style="{StaticResource MaterialDesignFloatingHintTextBox}" FontFamily="Champagne &amp; Limousines" FontSize="16"/>
+                </StackPanel>
+            </Grid>
+
+            <Grid Grid.Row="5" Grid.Column="0" VerticalAlignment="Top" Margin="0,50,0,0" Height="65">
+                <StackPanel VerticalAlignment="Center" Margin="15,-10,15,0">
+                    <TextBox x:Name="close_time" Margin="0,10" materialDesign:HintAssist.Hint="Close time" Text="{Binding Source={x:Static sys:DateTime.Now}, Mode=OneWay,  StringFormat='yyyy-MM-dd HH:mm '}"
+                             Style="{StaticResource MaterialDesignFloatingHintTextBox}" FontFamily="Champagne &amp; Limousines" FontSize="16"/>
                 </StackPanel>
             </Grid>
 
