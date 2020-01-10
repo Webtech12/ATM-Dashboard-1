@@ -145,6 +145,35 @@ namespace ATM_Dashboard1.helper
             }
             return cmd;
         }
+        
+        public static MySqlCommand insertLog(string query, long log_id, string datetime, string unit_id, string log_type, string log_table)
+        {
+            MessageBox.Show(log_table);
+            try
+            {
+                if (connection != null)
+                {
+                    connection.Open();
+                    cmd = connection.CreateCommand();
+                    cmd.CommandType = CommandType.Text;
+                    cmd.CommandText = query;
+                    cmd.Parameters.AddWithValue("@log_id", log_id);
+                    cmd.Parameters.AddWithValue("@datetime", datetime);
+                    cmd.Parameters.AddWithValue("@unit_id", unit_id);
+                    cmd.Parameters.AddWithValue("@log_type", log_type);
+                    cmd.Parameters.AddWithValue("@log_table", log_table);
+                    cmd.ExecuteNonQuery();
+                    
+                    connection.Close();
+                }
+            }
+            catch (Exception e)
+            {
+                MessageBox.Show("connection Failed" + e.Message);
+                connection.Close();
+            }
+            return cmd;
+        }
 
     }
 }

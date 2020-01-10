@@ -208,17 +208,19 @@ namespace ATM_Dashboard1
                 var closed_at = close_time.Text;
                 var Description = rate.Text + " " + des.Text;
                 var Roci = Convert.ToInt32(roci.Text);
+                
+
                 string insertQuery = "INSERT INTO atmars_testdb.generalentry(initial,onbehalf,subject,description,datetime,frn,frnstatus,actions,management,ate,roci,status,ari_kpi,dep_kpi,dans,updated,form_id,closed_at) " +
                     "VALUES(@Initial,@Onbehalf,@Subject,@Description,@datetime,'','','','','',@Roci,@Status,@Ari_kpi,@Dep_kpi,@Dans,'','',@closed_at)";
                 cmd = DBhelper.Insert(insertQuery, Initial, Onbehalf, Subject, Description, datetime, Roci, Status, Ari_kpi, Dep_kpi, Dans, closed_at);
-                long insert_id = cmd.LastInsertedId;
+                long log_id = cmd.LastInsertedId;
 
                 if (cmd != null)
                 {
                     var Units = DBhelper.getAgentUnits(int.Parse(Initial));
                     cmd = DBhelper.GetRelation(Units);
 
-                    string agentUnit = null;
+                    string unit_id = null;
                     if (cmd != null)
                     {
                         dt = new DataTable();
@@ -226,16 +228,22 @@ namespace ATM_Dashboard1
                         sda.Fill(dt);
                         foreach (DataRow dr in dt.Rows)
                         {
-                            agentUnit = dr["agentunit"].ToString();
-                            MessageBox.Show(agentUnit);
+                            unit_id = dr["agentunit"].ToString();
                         }
                     }
 
-                    /* string insertFormlog = "INSERT INTO atmars_testdb.form_logs(log_type,log_table,log_id,datetime) " +
-                    "VALUES(@Initial,@Onbehalf,@Subject,@Description,@datetime,'','','','','',@Roci,@Status,@Ari_kpi,@Dep_kpi,@Dans,'','',@closed_at)";
-                    cmd = DBhelper.Insert(insertFormlog, Initial, Onbehalf, Subject, Description, datetime, Roci, Status, Ari_kpi, Dep_kpi, Dans, closed_at); */
-                    MessageBox.Show("Insertion successful");
-                    this.Close();
+                    string log_type = "generalentry";
+                    string log_table = "generalentry";
+
+                    string insertFormlog = "INSERT INTO atmars_testdb.form_logs(log_type,log_table,log_id,datetime, unit_id) " +
+                        "VALUES(@log_type,@log_table,@log_id,@datetime,@unit_id)";
+                         cmd = DBhelper.insertLog(insertFormlog, log_id, datetime, unit_id, log_type, log_table);
+                         //long insert_Logid = cmd.LastInsertedId;
+
+
+                         MessageBox.Show(cmd.CommandText);
+                         MessageBox.Show("Insertion successful");
+                        // this.Close();
                 }
                 else
                 {
