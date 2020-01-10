@@ -148,7 +148,6 @@ namespace ATM_Dashboard1.helper
         
         public static MySqlCommand insertLog(string query, long log_id, string datetime, string unit_id, string log_type, string log_table)
         {
-            MessageBox.Show(log_table);
             try
             {
                 if (connection != null)
@@ -174,6 +173,37 @@ namespace ATM_Dashboard1.helper
             }
             return cmd;
         }
+        
+        public static MySqlCommand insertAccesslog(string query, string agentcode, string message, long form_log_id, string log_datetime, string unit_id)
+        {
+            ;
+            try
+            {
+                if (connection != null)
+                {
+                    connection.Open();
+                    cmd = connection.CreateCommand();
+                    cmd.CommandType = CommandType.Text;
+                    cmd.CommandText = query;
+                    cmd.Parameters.AddWithValue("@agentcode", agentcode);
+                    cmd.Parameters.AddWithValue("@log_datetime", log_datetime);
+                    cmd.Parameters.AddWithValue("@message", message);
+                    cmd.Parameters.AddWithValue("@unit_id", unit_id);
+                    cmd.Parameters.AddWithValue("@form_log_id", form_log_id);
+                    cmd.ExecuteNonQuery();
+                    
+                    connection.Close();
+                }
+            }
+            catch (Exception e)
+            {
+                MessageBox.Show("connection Failed" + e.Message);
+                connection.Close();
+            }
+            return cmd;
+        }
+
+
 
     }
 }

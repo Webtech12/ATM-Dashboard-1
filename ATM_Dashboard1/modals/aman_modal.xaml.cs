@@ -234,15 +234,23 @@ namespace ATM_Dashboard1
 
                     string log_type = "generalentry";
                     string log_table = "generalentry";
+                    string message = "Inserted Generalentry Log";
 
                     string insertFormlog = "INSERT INTO atmars_testdb.form_logs(log_type,log_table,log_id,datetime, unit_id) " +
                         "VALUES(@log_type,@log_table,@log_id,@datetime,@unit_id)";
                          cmd = DBhelper.insertLog(insertFormlog, log_id, datetime, unit_id, log_type, log_table);
-                         //long insert_Logid = cmd.LastInsertedId;
+                         long form_log_id = cmd.LastInsertedId;
 
+                            if (cmd != null)
+                            {
+                                string agentcode = Initial;
+                                string log_datetime = datetime;
+                                string insertAccesslog = "INSERT INTO atmars_testdb.access_logs(agentcode,message,form_log_id,log_datetime, unit_id) " +
+                                "VALUES(@agentcode,@message,@form_log_id,@log_datetime,@unit_id)";
+                                cmd = DBhelper.insertAccesslog(insertAccesslog, Initial, message, form_log_id, log_datetime, unit_id);
+                            }
 
-                         MessageBox.Show(cmd.CommandText);
-                         MessageBox.Show("Insertion successful");
+                    MessageBox.Show("Insertion successful");
                         // this.Close();
                 }
                 else

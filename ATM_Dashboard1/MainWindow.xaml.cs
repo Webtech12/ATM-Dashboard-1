@@ -1,4 +1,5 @@
-﻿using System.Windows;
+﻿using ATM_Dashboard1.modals;
+using System.Windows;
 
 namespace ATM_Dashboard1
 {
@@ -25,7 +26,8 @@ namespace ATM_Dashboard1
 
         private void dpo_modal(object sender, System.Windows.Input.MouseButtonEventArgs e)
         {
-
+            dapo_modal dapo = new dapo_modal();
+            dapo.Show();
         }
         private void dw_modal(object sender, System.Windows.Input.MouseButtonEventArgs e)
         {
