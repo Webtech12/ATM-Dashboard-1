@@ -1,0 +1,142 @@
+﻿<Window x:Class="ATM_Dashboard1.modals.fault_modal"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+        xmlns:local="clr-namespace:ATM_Dashboard1.modals"
+        xmlns:sys="clr-namespace:System;assembly=mscorlib"
+        mc:Ignorable="d"
+        ResizeMode="CanMinimize" FontFamily="Segoe UI Emoji"
+        Title="fault_modal" Height="750" Width="600">
+
+    <Grid>
+        <TextBlock Text="Fault Reporting" FontSize="25" HorizontalAlignment="Center" FontFamily="Champagne &amp; Limousines" VerticalAlignment="Top" 
+                   Foreground="#8877a9 " Height="28" Width="170" RenderTransformOrigin="0.433,0.599" Margin="0,12,0,0"/>
+
+        <Grid>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="*"/>
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="0.5*"/>
+                <ColumnDefinition Width="0.5*"/>
+            </Grid.ColumnDefinitions>
+
+            <Grid Grid.Row="0" Grid.Column="0" VerticalAlignment="Top" Margin="0,50,0,0" Height="65">
+                <StackPanel VerticalAlignment="Top" Margin="15,-15,15,0">
+                    <TextBox Name="txinitial" Margin="0,10" materialDesign:HintAssist.Hint="Inital" 
+                             Style="{StaticResource MaterialDesignFloatingHintTextBox}" FontFamily="Champagne &amp; Limousines" FontSize="16"/>
+                </StackPanel>
+            </Grid>
+
+            <Grid Grid.Row="0" Grid.Column="1" VerticalAlignment="Top" Margin="0,44,0,0" Height="65" Grid.RowSpan="2">
+                <StackPanel VerticalAlignment="Top" Margin="15,15,15,0">
+                    <DatePicker Name="txtdate"  materialDesign:HintAssist.Hint="Date" Style="{StaticResource MaterialDesignDatePicker}" FontFamily="Champagne &amp; Limousines" />
+                </StackPanel>
+            </Grid>
+
+            <Grid Grid.Row="1" Grid.Column="0" VerticalAlignment="Top" Margin="0,34,0,0" Height="65" Grid.RowSpan="2">
+                <StackPanel VerticalAlignment="Center" Margin="15,-10,15,0">
+                    <materialDesign:TimePicker x:Name="txttime"></materialDesign:TimePicker>
+                </StackPanel>
+            </Grid>
+
+            <Grid Grid.Row="1" Grid.Column="1" VerticalAlignment="Top" Margin="0,34,0,0" Height="65">
+                <StackPanel VerticalAlignment="Center" Margin="15,-30,15,0">
+                    <TextBlock>On Behalf</TextBlock>
+                    <ComboBox x:Name="Onbehalf">
+                        <ComboBoxItem IsSelected="True">Select</ComboBoxItem>
+                    </ComboBox>
+                </StackPanel>
+            </Grid>
+
+            <Grid Grid.Row="2" Grid.Column="0" VerticalAlignment="Top" Margin="0,35,0,0" Height="65" Grid.RowSpan="2">
+                <StackPanel VerticalAlignment="Center" Margin="15,-30,15,0">
+                    <TextBlock>Position</TextBlock>
+                    <ComboBox x:Name="position">
+                        <ComboBoxItem IsSelected="True">Select</ComboBoxItem>
+                    </ComboBox>
+                </StackPanel>
+            </Grid>
+
+            <Grid Grid.Row="2" Grid.Column="1" VerticalAlignment="Top" Margin="0,35,0,0" Height="65">
+                <StackPanel VerticalAlignment="Center" Margin="15,-30,15,0">
+                    <TextBlock>Console</TextBlock>
+                    <ComboBox x:Name="console">
+                        <ComboBoxItem IsSelected="True">Select</ComboBoxItem>
+                    </ComboBox>
+                </StackPanel>
+            </Grid>
+
+            <Grid Grid.Row="3" Grid.Column="0" VerticalAlignment="Top" Margin="0,40,0,0" Height="65" Grid.RowSpan="2">
+                <StackPanel VerticalAlignment="Center" Margin="15,-30,15,0">
+                    <TextBlock>Equipment</TextBlock>
+                    <ComboBox x:Name="equipment">
+                        <ComboBoxItem IsSelected="True">Select</ComboBoxItem>
+                    </ComboBox>
+                </StackPanel>
+            </Grid>
+
+            <Grid Grid.Row="3" Grid.Column="1" VerticalAlignment="Top" Margin="0,30,0,0" Height="65" Grid.RowSpan="2">
+                <StackPanel VerticalAlignment="Center" Margin="15,-10,15,0">
+                    <TextBox Name="errtxt" Margin="0,10" materialDesign:HintAssist.Hint="Error Text *" 
+                             Style="{StaticResource MaterialDesignFloatingHintTextBox}" FontFamily="Champagne &amp; Limousines" FontSize="16"/>
+                </StackPanel>
+            </Grid>
+
+            <Grid Grid.Row="4" Grid.Column="0" VerticalAlignment="Top" Margin="0,30,0,0" Height="65" Grid.RowSpan="2">
+                <StackPanel VerticalAlignment="Top" Margin="15,-0,15,0">
+                    <TextBox x:Name="roci" Margin="0,10" materialDesign:HintAssist.Hint="ROSI" Text="0"
+                             Style="{StaticResource MaterialDesignFloatingHintTextBox}" FontFamily="Champagne &amp; Limousines" FontSize="16"/>
+                </StackPanel>
+            </Grid>
+
+            <Grid Grid.Row="4" Grid.Column="1" VerticalAlignment="Top" Margin="0,34,0,0" Height="65" Grid.RowSpan="2">
+                <StackPanel VerticalAlignment="Center" Margin="15,-30,15,0">
+                    <TextBox x:Name="des" AcceptsReturn="True" VerticalScrollBarVisibility="Visible" TextWrapping="Wrap" Margin="0,10" 
+                           materialDesign:HintAssist.Hint="Description" Style="{StaticResource MaterialDesignFloatingHintTextBox}" 
+                           FontFamily="Champagne &amp; Limousines" FontSize="16"/>
+                </StackPanel>
+            </Grid>
+
+            <Grid Grid.Row="5" Grid.Column="0" VerticalAlignment="Top" Margin="0,38,0,0" Height="65" Grid.RowSpan="2">
+                <StackPanel VerticalAlignment="Center" Margin="15,-30,15,0">
+                    <TextBlock>Status</TextBlock>
+                    <ComboBox x:Name="status" SelectionChanged="status_SelectionChanged" >
+                        <ComboBoxItem>Open</ComboBoxItem>
+                        <ComboBoxItem IsSelected="True">Close</ComboBoxItem>
+                        <ComboBoxItem>Follow-Up</ComboBoxItem>
+                    </ComboBox>
+                </StackPanel>
+            </Grid>
+
+            <Grid Grid.Row="5" Grid.Column="1" VerticalAlignment="Top" Margin="0,26,0,0" Height="65">
+                <StackPanel VerticalAlignment="Center" Margin="15,-10,15,0">
+                    <CheckBox x:Name="arr">ARR KPI</CheckBox>
+                    <CheckBox x:Name="dep">DEP KPI</CheckBox>
+                    <CheckBox x:Name="dans">Dans Internal</CheckBox>
+                </StackPanel>
+            </Grid>
+
+            <Grid Grid.Row="6" Grid.Column="0" VerticalAlignment="Top" Margin="0,26,0,0" Height="65">
+                <StackPanel VerticalAlignment="Top" Margin="15,-0,15,0">
+                    <TextBox x:Name="close_time" Margin="0,10" materialDesign:HintAssist.Hint="Close time" Text="{Binding Source={x:Static sys:DateTime.Now}, Mode=OneWay,  StringFormat='yyyy-MM-dd HH:mm '}"
+                             Style="{StaticResource MaterialDesignFloatingHintTextBox}" FontFamily="Champagne &amp; Limousines" FontSize="16"/>
+                </StackPanel>
+            </Grid>
+
+        </Grid>
+
+        <Button Width="150" Click="fault_Click" HorizontalAlignment="Center" VerticalAlignment="Bottom" Margin="0,0,0,20" Content="Submit" Background="#FF45B6AF" BorderBrush="#FF45B6AF"  />
+
+
+    </Grid>
+</Window>

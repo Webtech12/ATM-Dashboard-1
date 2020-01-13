@@ -19,6 +19,9 @@
     <Compile Update="modals\down_modal.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Update="modals\fault_modal.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Update="modals\gen_modal.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
@@ -40,6 +43,9 @@
       <SubType>Designer</SubType>
     </Page>
     <Page Update="modals\down_modal.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="modals\fault_modal.xaml">
       <SubType>Designer</SubType>
     </Page>
     <Page Update="modals\gen_modal.xaml">

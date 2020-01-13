@@ -106,8 +106,14 @@ namespace ATM_Dashboard1.helper
             string query = "SELECT * FROM atmars_testdb.subjectform";
             return query;
         }
+        
+        public  static string GetDatas(string tblname)
+        {
+            string query = "SELECT * FROM atmars_testdb."+ tblname + " ";
+            return query;
+        }
 
-        // Insert query (overloaded method)
+        // Insert query Gen(overloaded method)
         public static MySqlCommand Insert(string query, string Initial, string Onbehalf, string Subject,
                                          string Description, string datetime, int Roci,
                                          string Status, string Ari_kpi, string Dep_kpi, 
@@ -145,7 +151,51 @@ namespace ATM_Dashboard1.helper
             }
             return cmd;
         }
-        
+
+        // Insert query Fal(overloaded method)
+        public static MySqlCommand Insert(string query, string Subject, string datetime, string Initial,
+                                         string Onbehalf, string Description, string Position_name, string Console_number,
+                                         string System_equipment, string Error_text, int Roci,
+                                         string Status, string Ari_kpi, string Dep_kpi,
+                                         string Dans, string closed_at)
+        {
+            //MessageBox.Show(closed_at);
+            try
+            {
+                if (connection != null)
+                {
+                    connection.Open();
+                    cmd = connection.CreateCommand();
+                    cmd.CommandType = CommandType.Text;
+                    cmd.CommandText = query;
+                    cmd.Parameters.AddWithValue("@Initial", Initial);
+                    cmd.Parameters.AddWithValue("@onbehalf", Onbehalf);
+                    cmd.Parameters.AddWithValue("@subject", Subject);
+                    cmd.Parameters.AddWithValue("@position_name", Position_name);
+                    cmd.Parameters.AddWithValue("@console_number", Console_number);
+                    cmd.Parameters.AddWithValue("@system_equipment", System_equipment);
+                    cmd.Parameters.AddWithValue("@description", Description);
+                    cmd.Parameters.AddWithValue("@datetime", datetime);
+                    cmd.Parameters.AddWithValue("@roci", Roci);
+                    cmd.Parameters.AddWithValue("@error_text", Error_text);
+                    cmd.Parameters.AddWithValue("@status", Status);
+                    cmd.Parameters.AddWithValue("@ari_kpi", Ari_kpi);
+                    cmd.Parameters.AddWithValue("@dep_kpi", Dep_kpi);
+                    cmd.Parameters.AddWithValue("@dans", Dans);
+                    cmd.Parameters.AddWithValue("@closed_at", closed_at);
+                    cmd.ExecuteNonQuery();
+
+                    connection.Close();
+                }
+            }
+            catch (Exception e)
+            {
+                MessageBox.Show("connection Failed" + e.Message);
+                connection.Close();
+            }
+            return cmd;
+        }
+
         public static MySqlCommand insertLog(string query, long log_id, string datetime, string unit_id, string log_type, string log_table)
         {
             try
