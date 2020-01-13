@@ -21,7 +21,8 @@ namespace ATM_Dashboard1
 
         private void wt_modal(object sender, System.Windows.Input.MouseButtonEventArgs e)
         {
-            MessageBox.Show("works");
+            wt_modal wtmodal = new wt_modal();
+            wtmodal.Show();
         }
 
         private void dpo_modal(object sender, System.Windows.Input.MouseButtonEventArgs e)
@@ -31,7 +32,8 @@ namespace ATM_Dashboard1
         }
         private void dw_modal(object sender, System.Windows.Input.MouseButtonEventArgs e)
         {
-
+            down_modal downwind = new down_modal();
+            downwind.Show();
         }
         
         private void watch_view(object sender, System.Windows.Input.MouseButtonEventArgs e)
@@ -46,7 +48,8 @@ namespace ATM_Dashboard1
         
         private void gen_modal(object sender, System.Windows.Input.MouseButtonEventArgs e)
         {
-
+            gen_modal general = new gen_modal();
+            general.Show();
         }
 
         private void rosi(object sender, System.Windows.Input.MouseButtonEventArgs e)
