@@ -5,17 +5,17 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
         xmlns:local="clr-namespace:ATM_Dashboard1.modals"
+        xmlns:sys="clr-namespace:System;assembly=mscorlib"
         mc:Ignorable="d"
         ResizeMode="CanMinimize" FontFamily="Segoe UI Emoji"
         Title="dapo_modal" Height="750" Width="600">
-    
+
     <Grid>
         <TextBlock Text="D-APO" FontSize="25" HorizontalAlignment="Center" FontFamily="Champagne &amp; Limousines" VerticalAlignment="Top" 
                    Foreground="#8877a9 " Height="28" Width="83" RenderTransformOrigin="0.433,0.599" Margin="0,12,0,0"/>
 
         <Grid>
             <Grid.RowDefinitions>
-                <RowDefinition Height="*"/>
                 <RowDefinition Height="*"/>
                 <RowDefinition Height="*"/>
                 <RowDefinition Height="*"/>
@@ -64,7 +64,7 @@
                     </ComboBox>
                 </StackPanel>
             </Grid>
-            
+
             <Grid Grid.Row="2" Grid.Column="1" VerticalAlignment="Top" Margin="0,50,0,0" Height="65">
                 <StackPanel VerticalAlignment="Center" Margin="15,-30,15,0">
                     <TextBlock>Description</TextBlock>
@@ -75,7 +75,7 @@
                     </ComboBox>
                 </StackPanel>
             </Grid>
-            
+
             <Grid Grid.Row="3" Grid.Column="0" VerticalAlignment="Top" Margin="0,50,0,0" Height="65">
                 <StackPanel VerticalAlignment="Center" Margin="15,-10,15,0">
                     <TextBox x:Name="roci" Margin="0,10" materialDesign:HintAssist.Hint="ROSI" Text="0"
@@ -102,9 +102,16 @@
                 </StackPanel>
             </Grid>
 
-
-
+            <Grid Grid.Row="4" Grid.Column="1" VerticalAlignment="Top" Margin="0,50,0,0" Height="65">
+                <StackPanel VerticalAlignment="Center" Margin="15,-10,15,0">
+                    <TextBox x:Name="close_time" Margin="0,10" materialDesign:HintAssist.Hint="Close time" Text="{Binding Source={x:Static sys:DateTime.Now}, Mode=OneWay,  StringFormat='yyyy-MM-dd HH:mm '}"
+                             Style="{StaticResource MaterialDesignFloatingHintTextBox}" FontFamily="Champagne &amp; Limousines" FontSize="16"/>
+                </StackPanel>
+            </Grid>
         </Grid>
+        
+        
+        <Button Width="150" Click="dapo_Click" HorizontalAlignment="Center" VerticalAlignment="Bottom" Margin="0,0,0,20" Content="Submit" Background="#FF45B6AF" BorderBrush="#FF45B6AF"/>
 
     </Grid>
 </Window>

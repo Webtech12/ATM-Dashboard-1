@@ -10,11 +10,11 @@ none
 false
 TRACE;RELEASE;NETCOREAPP;NETCOREAPP3_1
 C:\Users\aaa\source\repos\ATM_Dashboard1\ATM_Dashboard1\App.xaml
-3-1235814969
+4-1108460399
 
-10488490647
+11-1837458156
 195325743842
-aman_modal.xaml;ATM_Login.xaml;MainWindow.xaml;
+ATM_Login.xaml;MainWindow.xaml;modals\aman_modal.xaml;modals\dapo_modal.xaml;
 
 False
 
