@@ -16,6 +16,9 @@
     <Compile Update="modals\dapo_modal.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Update="modals\down_modal.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <Page Update="modals\aman_modal.xaml">
@@ -28,6 +31,9 @@
       <SubType>Designer</SubType>
     </Page>
     <Page Update="modals\dapo_modal.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="modals\down_modal.xaml">
       <SubType>Designer</SubType>
     </Page>
   </ItemGroup>
