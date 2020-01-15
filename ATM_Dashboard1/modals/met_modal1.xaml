@@ -1,0 +1,72 @@
+﻿<Window x:Class="ATM_Dashboard1.modals.met_modal1"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+        xmlns:local="clr-namespace:ATM_Dashboard1.modals"
+        mc:Ignorable="d"
+        ResizeMode="CanMinimize" FontFamily="Segoe UI Emoji"
+        Title="met_modal" Height="700" Width="600">
+    
+    <Grid>
+
+        <TextBlock Text="MET Condition" FontSize="25" HorizontalAlignment="Center" FontFamily="Champagne &amp; Limousines" VerticalAlignment="Top" 
+                   Foreground="#8877a9 " Height="28" Width="170" RenderTransformOrigin="0.433,0.599" Margin="0,12,0,0"/>
+
+        <Grid>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="*"/>
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="0.5*"/>
+                <ColumnDefinition Width="0.5*"/>
+            </Grid.ColumnDefinitions>
+
+            <Grid Grid.Row="0" Grid.Column="0" VerticalAlignment="Top" Margin="0,50,0,0" Height="65">
+                <StackPanel VerticalAlignment="Center" Margin="15,-10,15,0">
+                    <TextBox Name="txinitial" Margin="0,10" materialDesign:HintAssist.Hint="Inital" 
+                             Style="{StaticResource MaterialDesignFloatingHintTextBox}" FontFamily="Champagne &amp; Limousines" FontSize="16"/>
+                </StackPanel>
+            </Grid>
+
+            <Grid Grid.Row="0" Grid.Column="1" VerticalAlignment="Top" Margin="0,48,0,0" Height="65">
+                <StackPanel VerticalAlignment="Top" Margin="15,27,15,0">
+                    <DatePicker Name="txtdate"  materialDesign:HintAssist.Hint="Date" Style="{StaticResource MaterialDesignDatePicker}" FontFamily="Champagne &amp; Limousines" />
+                </StackPanel>
+            </Grid>
+
+            <Grid Grid.Row="1" Grid.Column="0" VerticalAlignment="Top" Margin="0,50,0,0" Height="65">
+                <StackPanel VerticalAlignment="Center" Margin="15,-10,15,0">
+                    <materialDesign:TimePicker x:Name="txttime"></materialDesign:TimePicker>
+                </StackPanel>
+            </Grid>
+
+            <Grid Grid.Row="1" Grid.Column="1" VerticalAlignment="Top" Margin="0,50,0,0" Height="65">
+                <StackPanel VerticalAlignment="Center" Margin="15,-30,15,0">
+                    <TextBlock>Units*</TextBlock>
+                    <ComboBox x:Name="arrival">
+                        <ComboBoxItem IsSelected="True">OMDM</ComboBoxItem>
+                    </ComboBox>
+                </StackPanel>
+            </Grid>
+
+            <Grid Grid.Row="2" Grid.Column="0" VerticalAlignment="Top" Margin="0,40,0,0" Height="65">
+                <StackPanel VerticalAlignment="Center" HorizontalAlignment="Left" Margin="15,-40,15,0">
+                    <TextBlock>MET Conditions *</TextBlock>
+                    <RadioButton GroupName="des" Content="VMC" Width="100" Checked="RadioButton_Checked" />
+                    <RadioButton GroupName="des" Content="IMC" Width="100" Checked="RadioButton_Checked_1"  />
+                    <RadioButton GroupName="des" Content="LVP" Width="100" Checked="RadioButton_Checked_2" />
+                    <RadioButton GroupName="des" Content="LVS" Width="100" Checked="RadioButton_Checked_3" />
+                    <RadioButton GroupName="des" Content="LVO" Width="100" Checked="RadioButton_Checked_4" />
+                </StackPanel>
+            </Grid>
+
+        </Grid>
+        <Button Width="150" Click="met_Click" HorizontalAlignment="Center" VerticalAlignment="Bottom" Margin="0,0,0,20" Content="Submit" Background="#FF45B6AF" BorderBrush="#FF45B6AF"  />
+
+    </Grid>
+</Window>

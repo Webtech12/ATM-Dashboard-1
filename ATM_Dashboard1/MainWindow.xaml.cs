@@ -43,13 +43,37 @@ namespace ATM_Dashboard1
 
         private void fault_modal(object sender, System.Windows.Input.MouseButtonEventArgs e)
         {
-
+            fault_modal fault = new fault_modal();
+            fault.Show();
         }
         
         private void gen_modal(object sender, System.Windows.Input.MouseButtonEventArgs e)
         {
             gen_modal general = new gen_modal();
             general.Show();
+        }
+        private void omsj_modal(object sender, System.Windows.Input.MouseButtonEventArgs e)
+        {
+            rwy_modal  omsj = new rwy_modal();
+            omsj.Show();
+        }
+        
+        private void omdm_modal(object sender, System.Windows.Input.MouseButtonEventArgs e)
+        {
+            rwy_modal1 omdm = new rwy_modal1();
+            omdm.Show();
+        }
+        
+        private void met_modal(object sender, System.Windows.Input.MouseButtonEventArgs e)
+        {
+            met_modal met = new met_modal();
+            met.Show();
+        }
+        
+        private void met1_modal(object sender, System.Windows.Input.MouseButtonEventArgs e)
+        {
+            met_modal1 met1 = new met_modal1();
+            met1.Show();
         }
 
         private void rosi(object sender, System.Windows.Input.MouseButtonEventArgs e)

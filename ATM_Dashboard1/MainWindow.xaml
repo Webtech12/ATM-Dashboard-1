@@ -261,7 +261,7 @@
                 </Grid>
 
                 <Grid Grid.Row="4" Grid.Column="0" Margin="0,0,32,0">
-                    <Rectangle Height="70" Margin="20,35,20,40" Fill="White" RadiusY="10" RadiusX="10" Cursor="Hand">
+                    <Rectangle MouseDown="omsj_modal" Height="70" Margin="20,35,20,40" Fill="White" RadiusY="10" RadiusX="10" Cursor="Hand">
                         <Rectangle.Effect>
                             <DropShadowEffect BlurRadius="20" Color="#FFDEDEDE" RenderingBias="Quality" ShadowDepth="1"/>
                         </Rectangle.Effect>
@@ -281,7 +281,7 @@
                 </Grid>
 
                 <Grid  Grid.Row="4" Grid.Column="1" Margin="0,0,32,0">
-                    <Rectangle Height="70" Margin="20,35,20,40" Fill="White" RadiusY="10" RadiusX="10" Cursor="Hand">
+                    <Rectangle MouseDown="met_modal" Height="70" Margin="20,35,20,40" Fill="White" RadiusY="10" RadiusX="10" Cursor="Hand">
                         <Rectangle.Effect>
                             <DropShadowEffect BlurRadius="20" Color="#FFDEDEDE" RenderingBias="Quality" ShadowDepth="1"/>
                         </Rectangle.Effect>
@@ -297,7 +297,7 @@
                 </Grid>
 
                 <Grid Grid.Row="5" Grid.Column="0" Margin="0,0,32,0">
-                    <Rectangle Height="70" Margin="20,35,20,40" Fill="White" RadiusY="10" RadiusX="10" Cursor="Hand">
+                    <Rectangle MouseDown="omdm_modal" Height="70" Margin="20,35,20,40" Fill="White" RadiusY="10" RadiusX="10" Cursor="Hand">
                         <Rectangle.Effect>
                             <DropShadowEffect BlurRadius="20" Color="#FFDEDEDE" RenderingBias="Quality" ShadowDepth="1"/>
                         </Rectangle.Effect>
@@ -317,7 +317,7 @@
                 </Grid>
 
                 <Grid  Grid.Row="5" Grid.Column="1" Margin="0,0,32,0">
-                    <Rectangle Height="70" Margin="20,35,20,40" Fill="White" RadiusY="10" RadiusX="10" Cursor="Hand">
+                    <Rectangle MouseDown="met1_modal" Height="70" Margin="20,35,20,40" Fill="White" RadiusY="10" RadiusX="10" Cursor="Hand">
                         <Rectangle.Effect>
                             <DropShadowEffect BlurRadius="20" Color="#FFDEDEDE" RenderingBias="Quality" ShadowDepth="1"/>
                         </Rectangle.Effect>
@@ -348,7 +348,7 @@
                 </Grid>
 
                 <Grid Grid.Row="1" Grid.Column="3" Margin="0,0,32,0">
-                    <Rectangle Height="70" Margin="20,35,20,40" Fill="White" RadiusY="10" RadiusX="10" Cursor="Hand">
+                    <Rectangle MouseDown="fault_modal" Height="70" Margin="20,35,20,40" Fill="White" RadiusY="10" RadiusX="10" Cursor="Hand">
                         <Rectangle.Effect>
                             <DropShadowEffect BlurRadius="20" Color="#FFDEDEDE" RenderingBias="Quality" ShadowDepth="1"/>
                         </Rectangle.Effect>

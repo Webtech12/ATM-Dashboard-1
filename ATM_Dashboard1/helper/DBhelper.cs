@@ -89,6 +89,12 @@ namespace ATM_Dashboard1.helper
             string query = "SELECT " + column + " FROM atmars_testdb." + table + " where " + reference + " = "+input+" limit 1";
             return query;
         } 
+        public  static string GetQueryRWY(string table, string column, string reference, string input, int unit_id)
+        {
+            input = '"'+input+'"';
+            string query = "SELECT " + column + " FROM atmars_testdb." + table + " where " + reference + " = "+input+" AND unit_id ="+unit_id+" limit 1";
+            return query;
+        } 
         public  static string GetUnitUsers()
         {
             string query = "SELECT * FROM atmars_testdb.tblagent";
@@ -111,6 +117,83 @@ namespace ATM_Dashboard1.helper
         {
             string query = "SELECT * FROM atmars_testdb."+ tblname + " ";
             return query;
+        }
+
+        public static bool IsValid(string value)
+        {
+            if (value.Length < 1 || String.IsNullOrEmpty(value) || value.Equals("Select"))
+            {
+                return false;
+            }
+            else
+            {
+                return true;
+            }
+            
+        }
+
+        // Insert query Rwy(overloaded method)
+        public static MySqlCommand Insert(string query, string Runway_in_use, string Runway_in_use_depart, int Unit_id, 
+                                          string Subject, string datetime, string Initial, string Onbehalf, string Description)
+        {
+            //MessageBox.Show(closed_at);
+            try
+            {
+                if (connection != null)
+                {
+                    connection.Open();
+                    cmd = connection.CreateCommand();
+                    cmd.CommandType = CommandType.Text;
+                    cmd.CommandText = query;
+                    cmd.Parameters.AddWithValue("@Initial", Initial);
+                    cmd.Parameters.AddWithValue("@onbehalf", Onbehalf);
+                    cmd.Parameters.AddWithValue("@subject", Subject);
+                    cmd.Parameters.AddWithValue("@description", Description);
+                    cmd.Parameters.AddWithValue("@datetime", datetime);
+                    cmd.Parameters.AddWithValue("@runway_in_use", Runway_in_use);
+                    cmd.Parameters.AddWithValue("@runway_in_use_depart", Runway_in_use_depart);
+                    cmd.Parameters.AddWithValue("@unit_id", Unit_id);
+                    cmd.ExecuteNonQuery();
+
+                    connection.Close();
+                }
+            }
+            catch (Exception e)
+            {
+                MessageBox.Show("connection Failed" + e.Message);
+                connection.Close();
+            }
+            return cmd;
+        }
+
+        // Insert query MET(overloaded method)
+        public static MySqlCommand Insert(string query, string Subject, string datetime, string Initial, string Unit_id, string Condition)
+        {
+            //MessageBox.Show(Condition);
+            try
+            {
+                if (connection != null)
+                {
+                    connection.Open();
+                    cmd = connection.CreateCommand();
+                    cmd.CommandType = CommandType.Text;
+                    cmd.CommandText = query;
+                    cmd.Parameters.AddWithValue("@subject", Subject);
+                    cmd.Parameters.AddWithValue("@datetime", datetime);
+                    cmd.Parameters.AddWithValue("@Initial", Initial);
+                    cmd.Parameters.AddWithValue("@unit_id", Unit_id);
+                    cmd.Parameters.AddWithValue("@condition", Condition);
+                    cmd.ExecuteNonQuery();
+
+                    connection.Close();
+                }
+            }
+            catch (Exception e)
+            {
+                MessageBox.Show("connection Failed" + e.Message);
+                connection.Close();
+            }
+            return cmd;
         }
 
         // Insert query Gen(overloaded method)

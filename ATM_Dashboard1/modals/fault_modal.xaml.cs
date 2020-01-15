@@ -205,6 +205,14 @@ namespace ATM_Dashboard1.modals
         {
             try
             {
+                if (!DBhelper.IsValid(position.Text) || !DBhelper.IsValid(errtxt.Text))
+                {
+                    MessageBox.Show("Fill the required field");
+                    return;
+                }
+                else
+                {
+               
                 var datetime = txtdate.SelectedDate.Value.Date.ToShortDateString().ToString() + " " + txttime.SelectedTime.Value.ToLongTimeString().ToString();
                 var Initial = GetInitials();
                 var Onbehalf = GetOnbehalf();
@@ -280,7 +288,8 @@ namespace ATM_Dashboard1.modals
                 else
                 {
                     MessageBox.Show("Insertion error");
-                }
+                } 
+            }
             }
             catch (Exception ex)
             {
