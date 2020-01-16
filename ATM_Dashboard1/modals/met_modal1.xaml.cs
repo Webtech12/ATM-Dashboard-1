@@ -58,7 +58,6 @@ namespace ATM_Dashboard1.modals
                 else
                 {
 
-
                     var datetime = txtdate.SelectedDate.Value.Date.ToShortDateString().ToString() + " " + txttime.SelectedTime.Value.ToLongTimeString().ToString();
                     var Initial = GetInitials();
                     var Subject = "MET Condition";

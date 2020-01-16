@@ -34,6 +34,15 @@
         "runtime": {
           "lib/netcoreapp3.0/MySqlConnector.dll": {}
         }
+      },
+      "RestSharp/106.10.1": {
+        "type": "package",
+        "compile": {
+          "lib/netstandard2.0/RestSharp.dll": {}
+        },
+        "runtime": {
+          "lib/netstandard2.0/RestSharp.dll": {}
+        }
       }
     }
   },
@@ -118,12 +127,28 @@
         "mysqlconnector.0.61.0.nupkg.sha512",
         "mysqlconnector.nuspec"
       ]
+    },
+    "RestSharp/106.10.1": {
+      "sha512": "MhR4w8LbArVaRA5T/oAR3ZnF852QXtDXRBO84GsvyYzsm7FsjXHJ+JaM8x/nR/B/OCB1WbolGH7hqMT1GZpNJw==",
+      "type": "package",
+      "path": "restsharp/106.10.1",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "lib/net452/RestSharp.dll",
+        "lib/net452/RestSharp.xml",
+        "lib/netstandard2.0/RestSharp.dll",
+        "lib/netstandard2.0/RestSharp.xml",
+        "restsharp.106.10.1.nupkg.sha512",
+        "restsharp.nuspec"
+      ]
     }
   },
   "projectFileDependencyGroups": {
     ".NETCoreApp,Version=v3.1": [
       "MaterialDesignThemes >= 3.0.1",
-      "MySqlConnector >= 0.61.0"
+      "MySqlConnector >= 0.61.0",
+      "RestSharp >= 106.10.1"
     ]
   },
   "packageFolders": {
@@ -170,6 +195,10 @@
           "MySqlConnector": {
             "target": "Package",
             "version": "[0.61.0, )"
+          },
+          "RestSharp": {
+            "target": "Package",
+            "version": "[106.10.1, )"
           }
         },
         "imports": [

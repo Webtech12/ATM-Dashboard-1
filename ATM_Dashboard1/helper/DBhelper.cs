@@ -119,6 +119,12 @@ namespace ATM_Dashboard1.helper
             return query;
         }
 
+        public static string Fill_met()
+        {
+            string paramUrl = "GetLatestUpdates/GetLatestUpdates/lastEntry/{met_condition}/{condition}/{unit_id}";
+            return paramUrl;
+        }
+
         public static bool IsValid(string value)
         {
             if (value.Length < 1 || String.IsNullOrEmpty(value) || value.Equals("Select"))

@@ -1,5 +1,13 @@
-﻿using ATM_Dashboard1.modals;
+﻿using ATM_Dashboard1.helper;
+using ATM_Dashboard1.modals;
+using ATM_Dashboard1.Model;
+using MySql.Data.MySqlClient;
+using RestSharp;
+using System;
+using System.Collections.Generic;
+using System.Data;
 using System.Windows;
+using System.Windows.Threading;
 
 namespace ATM_Dashboard1
 {
@@ -8,9 +16,88 @@ namespace ATM_Dashboard1
     /// </summary>
     public partial class MainWindow : Window
     {
+        private static MySqlCommand cmd = null;
+        private static DataTable dt;
+        private static MySqlDataAdapter sda;
+        private string Url = "http://localhost/atlog_api_new/api/";
         public MainWindow()
         {
             InitializeComponent();
+            Json_Deserialize();
+            //Fillomdm_met();
+
+        }
+
+
+        public void Json_Deserialize()
+        {
+            DispatcherTimer dispatcherTimer = new DispatcherTimer();
+            dispatcherTimer.Tick += new EventHandler(UpdatedMet);
+            dispatcherTimer.Interval = new TimeSpan(0, 0, 3);
+            dispatcherTimer.Start();
+
+        }
+
+    private void UpdatedMet(object sender, EventArgs e)
+        {
+            int[] units = new int[5] { 5, 6, 7, 13, 14 };
+            try
+            {
+                var client = new RestClient();
+                
+                foreach (int unit_id in units)
+                {
+                    var request = new RestRequest(Url + DBhelper.Fill_met());
+                    request.AddUrlSegment("met_condition", "met_condition");
+                    request.AddUrlSegment("condition", "condition");
+                    request.AddUrlSegment("unit_id", unit_id);
+                
+                    request.AddHeader("Accept", "application/json");
+                    IRestResponse<List<METJsonRootObject>> response = client.Get<List<METJsonRootObject>>(request);
+
+                    if (response.IsSuccessful)
+                    {
+                        Console.WriteLine("Status Code " + response.StatusCode);
+                        Console.WriteLine("Content " + response.Content);
+                        Console.WriteLine("Size of List " + response.Data.Count);
+                        Console.WriteLine("ID  " + response.Data[0].Condition);
+                        if (unit_id == 13)
+                        {
+                            omsj_met.Text = response.Data[0].Condition.ToUpper();
+                        }
+                        if (unit_id == 14)
+                        {
+                            omdm_met.Text = response.Data[0].Condition.ToUpper();
+                        }
+                        if (unit_id == 5)
+                        {
+                            omdb_met.Text = response.Data[0].Condition.ToUpper();
+                        }
+                        if (unit_id == 6)
+                        {
+                            omdw_met.Text = response.Data[0].Condition.ToUpper();
+                        }
+                        if (unit_id == 7)
+                        {
+                            efta_met.Text = response.Data[0].Condition.ToUpper();
+                        }
+
+                    }
+                    else
+                    {
+                        Console.WriteLine("Status Code " + response.StatusCode);
+                        omsj_met.Text = "VMC";
+                        omdm_met.Text = "VMC";
+                    }
+
+                }
+            }
+            catch (Exception ex)
+            {
+
+                MessageBox.Show("There might be some problem while updating the mets" + ex.Message);
+            }
+            
         }
 
         private void aman_modal(object sender, RoutedEventArgs e)

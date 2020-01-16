@@ -182,7 +182,7 @@
                         <TextBlock Text="MET" HorizontalAlignment="Center" FontSize="25" FontFamily="Champagne &amp; Limousines" VerticalAlignment="Top" 
                             Foreground="#8877a9 " Height="28" RenderTransformOrigin="0.433,0.599" Margin="0,12,12,0"/>
                         <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" VerticalAlignment="Top" Margin="0,40,0,0" Grid.RowSpan="2">
-                            <TextBlock Text="VMC" Margin="0,0,0,0" FontWeight="Bold" FontFamily="Champagne &amp; Limousines" 
+                            <TextBlock x:Name="omdb_met" Text="VMC" Margin="0,0,0,0" FontWeight="Bold" FontFamily="Champagne &amp; Limousines" 
                                        Foreground="#4DB3A2" FontSize="25"/>
                         </StackPanel>
                     </Grid>
@@ -218,7 +218,7 @@
                         <TextBlock Text="MET" HorizontalAlignment="Center" FontSize="25" FontFamily="Champagne &amp; Limousines" VerticalAlignment="Top" 
                             Foreground="#8877a9 " Height="28" RenderTransformOrigin="0.433,0.599" Margin="0,12,12,0"/>
                         <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" VerticalAlignment="Top" Margin="0,40,0,0" Grid.RowSpan="2">
-                            <TextBlock Text="VMC" Margin="0,0,0,0" FontWeight="Bold" FontFamily="Champagne &amp; Limousines" 
+                            <TextBlock x:Name="omdw_met" Text="VMC" Margin="0,0,0,0" FontWeight="Bold" FontFamily="Champagne &amp; Limousines" 
                                        Foreground="#4DB3A2" FontSize="25"/>
                         </StackPanel>
                     </Grid>
@@ -254,7 +254,7 @@
                         <TextBlock Text="MET" HorizontalAlignment="Center" FontSize="25" FontFamily="Champagne &amp; Limousines" VerticalAlignment="Top" 
                             Foreground="#8877a9 " Height="28" RenderTransformOrigin="0.433,0.599" Margin="0,12,12,0"/>
                         <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" VerticalAlignment="Top" Margin="0,40,0,0" Grid.RowSpan="2">
-                            <TextBlock Text="VMC" Margin="0,0,0,0" FontWeight="Bold" FontFamily="Champagne &amp; Limousines" 
+                            <TextBlock x:Name="efta_met" Text="VMC" Margin="0,0,0,0" FontWeight="Bold" FontFamily="Champagne &amp; Limousines" 
                                        Foreground="#4DB3A2" FontSize="25"/>
                         </StackPanel>
                     </Grid>
@@ -290,7 +290,7 @@
                         <TextBlock Text="MET" HorizontalAlignment="Center" FontSize="25" FontFamily="Champagne &amp; Limousines" VerticalAlignment="Top" 
                             Foreground="#8877a9 " Height="28" RenderTransformOrigin="0.433,0.599" Margin="0,12,12,0"/>
                         <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" VerticalAlignment="Top" Margin="0,40,0,0" Grid.RowSpan="2">
-                            <TextBlock Text="VMC" Margin="0,0,0,0" FontWeight="Bold" FontFamily="Champagne &amp; Limousines" 
+                            <TextBlock x:Name="omsj_met" Text="VMC" Margin="0,0,0,0" FontWeight="Bold" FontFamily="Champagne &amp; Limousines" 
                                        Foreground="#4DB3A2" FontSize="25"/>
                         </StackPanel>
                     </Grid>
@@ -326,7 +326,7 @@
                         <TextBlock Text="MET" HorizontalAlignment="Center" FontSize="25" FontFamily="Champagne &amp; Limousines" VerticalAlignment="Top" 
                             Foreground="#8877a9 " Height="28" RenderTransformOrigin="0.433,0.599" Margin="0,12,12,0"/>
                         <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" VerticalAlignment="Top" Margin="0,40,0,0" Grid.RowSpan="2">
-                            <TextBlock Text="VMC" Margin="0,0,0,0" FontWeight="Bold" FontFamily="Champagne &amp; Limousines" 
+                            <TextBlock x:Name="omdm_met" Text="VMC" Margin="0,0,0,0" FontWeight="Bold" FontFamily="Champagne &amp; Limousines" 
                                        Foreground="#4DB3A2" FontSize="25"/>
                         </StackPanel>
                     </Grid>
