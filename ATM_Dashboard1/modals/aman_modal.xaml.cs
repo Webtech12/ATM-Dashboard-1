@@ -1,4 +1,5 @@
-﻿using ATM_Dashboard1.helper;
+﻿using ATM_Dashboard1.DA_Layer;
+using ATM_Dashboard1.helper;
 using ATM_Dashboard1.PD_Layer;
 using MySql.Data.MySqlClient;
 using System;
@@ -15,6 +16,8 @@ namespace ATM_Dashboard1
     /// <summary>
     /// Interaction logic for aman_modal.xaml
     /// </summary>
+    /// 
+
     public partial class aman_modal : Window
     {
         private static MySqlCommand cmd = null;
@@ -30,11 +33,12 @@ namespace ATM_Dashboard1
             Thread.CurrentThread.CurrentCulture = ci;
             Thread.CurrentThread.CurrentUICulture = ci;
             DBhelper.EstablishConn();
+            txinitial.Text = DBhelper.credsUser;
             FillOnbehalf();
             FillSubjects();
             FillRate();
            // GetClosetime();
-    }
+        }
 
         void FillOnbehalf()
         {
@@ -85,7 +89,7 @@ namespace ATM_Dashboard1
 
         public string GetInitials()
         {
-                var Initial = DBhelper.GetQuery("tblagent", "agentcode", "agentname", txinitial.Text);
+            var Initial = DBhelper.GetQuery("tblagent", "agentcode", "agentname", txinitial.Text);
                 cmd = DBhelper.GetRelation(Initial);
                 string uId = null;
                 if (cmd != null)

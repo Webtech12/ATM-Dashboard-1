@@ -34,6 +34,10 @@ namespace ATM_Dashboard1
                 {
                     Users aUser = UsersDA.RetrieveUser(username);
 
+                    DBhelper.credsUnits = aUser.LoggedUnit;
+                    DBhelper.credsInitial = aUser.LoggedInitial;
+                    DBhelper.credsUser = aUser.UserName;
+
                     if (aUser.Password.Equals(password))
                     {
                         MessageBox.Show("Login Success");
@@ -48,9 +52,9 @@ namespace ATM_Dashboard1
                         txtpass.Password = "";
                     }
                 }
-                catch (Exception)
+                catch (Exception ex)
                 {
-                    MessageBox.Show("Username not found ");
+                    MessageBox.Show("Username not found " + ex.Message);
                 }
                
             }

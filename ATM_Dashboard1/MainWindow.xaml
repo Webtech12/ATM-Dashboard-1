@@ -12,9 +12,9 @@
     <Grid>
 
         <Grid Grid.Column="1" Grid.Row="1" Background="#EFEEEE">
-            
+
             <Grid>
-                
+
                 <Grid.RowDefinitions>
                     <RowDefinition Height="*"/>
                     <RowDefinition Height="*"/>
@@ -35,14 +35,14 @@
 
 
                 <Grid Grid.Row="1" Grid.RowSpan="4" Grid.ColumnSpan="2" HorizontalAlignment="Center" Width="580" Height="610">
-                    
+
                     <Grid Margin="30 -10 60 -90">
                         <Grid.OpacityMask>
                             <VisualBrush Visual="{ Binding ElementName=BorderG2 }"/>
                         </Grid.OpacityMask>
                         <Border x:Name="BorderG2" CornerRadius="15" BorderBrush="DarkGray" BorderThickness="2"/>
                     </Grid>
-                    
+
                 </Grid>
                 <Grid Grid.Row="3" Grid.RowSpan="3" Grid.ColumnSpan="2" HorizontalAlignment="Center" Width="580" Height="510">
 
@@ -52,7 +52,7 @@
                         </Grid.OpacityMask>
                         <Border x:Name="BorderG3" CornerRadius="15" BorderBrush="DarkGray" BorderThickness="2" />
                     </Grid>
-                    
+
                 </Grid>
 
                 <Grid Grid.Column="0" Margin="0,0,50,0">
@@ -66,7 +66,7 @@
                             FontFamily="Champagne &amp; Limousines" VerticalAlignment="Top"
                             Foreground="#8877a9 " Height="28" Width="129" RenderTransformOrigin="0.433,0.599" Margin="0,12,0,0"/>
                         <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" VerticalAlignment="Top" Margin="0,40,0,0" Grid.RowSpan="2">
-                            <TextBlock Text="49" FontWeight="Bold" FontFamily="Champagne &amp; Limousines" Foreground="Gray" FontSize="30"/>
+                            <TextBlock x:Name="fault_val" Text="49" FontWeight="Bold" FontFamily="Champagne &amp; Limousines" Foreground="Gray" FontSize="30"/>
                         </StackPanel>
                     </Grid>
                 </Grid>
@@ -82,7 +82,7 @@
                             FontFamily="Champagne &amp; Limousines" VerticalAlignment="Top" 
                             Foreground="#8877a9 " Height="28" Width="83" RenderTransformOrigin="0.433,0.599" Margin="0,12,0,0"/>
                         <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" VerticalAlignment="Top" Margin="0,40,0,0" Grid.RowSpan="2">
-                            <TextBlock Text="55" FontWeight="Bold" FontFamily="Champagne &amp; Limousines" Foreground="Gray" FontSize="35"/>
+                            <TextBlock x:Name="aman_val" Text="55" FontWeight="Bold" FontFamily="Champagne &amp; Limousines" Foreground="Gray" FontSize="35"/>
                         </StackPanel>
                     </Grid>
                 </Grid>
@@ -98,7 +98,7 @@
                             FontFamily="Champagne &amp; Limousines" VerticalAlignment="Top" 
                             Foreground="#8877a9 " Height="28" Width="38" RenderTransformOrigin="0.433,0.599" Margin="0,12,0,0"/>
                         <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" VerticalAlignment="Top" Margin="10,40,0,0" Grid.RowSpan="2">
-                            <TextBlock Text="Both Active" FontWeight="Bold" FontFamily="Champagne &amp; Limousines" Foreground="Gray" FontSize="23" Width="133"/>
+                            <TextBlock x:Name="wt_subject" Text="Both Active" FontWeight="Bold" FontFamily="Champagne &amp; Limousines" Foreground="Gray" FontSize="23" Width="133"/>
                         </StackPanel>
                     </Grid>
                 </Grid>
@@ -114,7 +114,7 @@
                             FontFamily="Champagne &amp; Limousines" VerticalAlignment="Top" 
                             Foreground="#8877a9 " Height="28" Width="139" RenderTransformOrigin="0.433,0.599" Margin="65,12,0,0" Grid.Row="1"/>
                         <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" VerticalAlignment="Top" Margin="0,40,0,0" Grid.RowSpan="2">
-                            <TextBlock Text="Not Active" FontWeight="Bold" FontFamily="Champagne &amp; Limousines" Foreground="Gray" FontSize="25"/>
+                            <TextBlock x:Name="dapo_subject" Text="Not Active" FontWeight="Bold" FontFamily="Champagne &amp; Limousines" Foreground="Gray" FontSize="25"/>
                         </StackPanel>
                     </Grid>
                 </Grid>
@@ -130,7 +130,7 @@
                             FontFamily="Champagne &amp; Limousines" VerticalAlignment="Top" 
                             Foreground="#8877a9 " Height="28" Width="139" RenderTransformOrigin="0.433,0.599" Margin="20,12,0,0" Grid.Row="1"/>
                         <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" VerticalAlignment="Top" Margin="0,40,0,0" Grid.RowSpan="2">
-                            <TextBlock Text="Single" FontWeight="Bold" FontFamily="Champagne &amp; Limousines" Foreground="Gray" FontSize="25"/>
+                            <TextBlock x:Name="down_subject" Text="Single" FontWeight="Bold" FontFamily="Champagne &amp; Limousines" Foreground="Gray" FontSize="25"/>
                         </StackPanel>
                     </Grid>
                 </Grid>
@@ -163,11 +163,10 @@
                             FontFamily="Champagne &amp; Limousines" VerticalAlignment="Top" 
                             Foreground="#8877a9 " Height="28" Width="139" RenderTransformOrigin="0.433,0.599" Margin="30,5,0,0" Grid.Row="1"/>
                         <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" VerticalAlignment="Top" Margin="-10,35,0,0" Grid.RowSpan="2">
-                            <TextBlock Text="ARRIVAL" Margin="0,0,0,0" FontFamily="Champagne &amp; Limousines" Foreground="Gray" FontSize="12"/>
-                            <TextBlock Text="30L" Margin="30,-25,0,0" FontWeight="Bold" FontFamily="Champagne &amp; Limousines" Foreground="Gray" FontSize="15" Height="15"/>
-                            <TextBlock Text="DEPARTURE" Margin="-140,15,0,0" HorizontalAlignment="Center" 
-                                       FontFamily="Champagne &amp; Limousines" Foreground="Gray" FontSize="12"/>
-                            <TextBlock Text="30R" Margin="-25,15,0,0" FontWeight="Bold" FontFamily="Champagne &amp; Limousines" Foreground="Gray" FontSize="15" Height="15"/>
+                            <TextBlock  Text="ARRIVAL" Margin="20,-20,0,0" FontFamily="Champagne &amp; Limousines" Foreground="Gray" FontSize="12" Width="51" Height="13"/>
+                            <TextBlock x:Name="omdb_rwy_arr" Text="CLOSED" Margin="20,-15,0,0" FontWeight="Bold" FontFamily="Champagne &amp; Limousines" Foreground="Gray" FontSize="13" Height="16" Width="64"/>
+                            <TextBlock Text="DEPARTURE" Margin="-200,15,0,0" FontFamily="Champagne &amp; Limousines" Foreground="Gray" FontSize="12" Width="66"/>
+                            <TextBlock x:Name="omdb_rwy_dep" Text="CLOSED" Margin="-65,15,0,0" FontWeight="Bold" FontFamily="Champagne &amp; Limousines" Foreground="Gray" FontSize="13" Height="15"/>
                         </StackPanel>
                     </Grid>
                 </Grid>
@@ -199,11 +198,10 @@
                             FontFamily="Champagne &amp; Limousines" VerticalAlignment="Top" 
                             Foreground="#8877a9 " Height="28" Width="139" RenderTransformOrigin="0.433,0.599" Margin="30,5,0,0" Grid.Row="1"/>
                         <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" VerticalAlignment="Top" Margin="-10,35,0,0" Grid.RowSpan="2">
-                            <TextBlock Text="ARRIVAL" Margin="0,0,0,0" FontFamily="Champagne &amp; Limousines" Foreground="Gray" FontSize="12"/>
-                            <TextBlock Text="30L" Margin="30,-25,0,0" FontWeight="Bold" FontFamily="Champagne &amp; Limousines" Foreground="Gray" FontSize="15" Height="15"/>
-                            <TextBlock Text="DEPARTURE" Margin="-140,15,0,0" HorizontalAlignment="Center" 
-                                       FontFamily="Champagne &amp; Limousines" Foreground="Gray" FontSize="12"/>
-                            <TextBlock Text="30R" Margin="-25,15,0,0" FontWeight="Bold" FontFamily="Champagne &amp; Limousines" Foreground="Gray" FontSize="15" Height="15"/>
+                            <TextBlock  Text="ARRIVAL" Margin="20,-20,0,0" FontFamily="Champagne &amp; Limousines" Foreground="Gray" FontSize="12" Width="51" Height="13"/>
+                            <TextBlock x:Name="omdw_rwy_arr" Text="CLOSED" Margin="20,-15,0,0" FontWeight="Bold" FontFamily="Champagne &amp; Limousines" Foreground="Gray" FontSize="13" Height="16" Width="64"/>
+                            <TextBlock Text="DEPARTURE" Margin="-200,15,0,0" FontFamily="Champagne &amp; Limousines" Foreground="Gray" FontSize="12" Width="66"/>
+                            <TextBlock x:Name="omdw_rwy_dep" Text="CLOSED" Margin="-65,15,0,0" FontWeight="Bold" FontFamily="Champagne &amp; Limousines" Foreground="Gray" FontSize="13" Height="15"/>
                         </StackPanel>
                     </Grid>
                 </Grid>
@@ -235,11 +233,10 @@
                             FontFamily="Champagne &amp; Limousines" VerticalAlignment="Top" 
                             Foreground="#8877a9 " Height="28" Width="139" RenderTransformOrigin="0.433,0.599" Margin="30,5,0,0" Grid.Row="1"/>
                         <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" VerticalAlignment="Top" Margin="-10,35,0,0" Grid.RowSpan="2">
-                            <TextBlock Text="ARRIVAL" Margin="0,0,0,0" FontFamily="Champagne &amp; Limousines" Foreground="Gray" FontSize="12"/>
-                            <TextBlock Text="30L" Margin="30,-25,0,0" FontWeight="Bold" FontFamily="Champagne &amp; Limousines" Foreground="Gray" FontSize="15" Height="15"/>
-                            <TextBlock Text="DEPARTURE" Margin="-140,15,0,0" HorizontalAlignment="Center" 
-                                       FontFamily="Champagne &amp; Limousines" Foreground="Gray" FontSize="12"/>
-                            <TextBlock Text="30R" Margin="-25,15,0,0" FontWeight="Bold" FontFamily="Champagne &amp; Limousines" Foreground="Gray" FontSize="15" Height="15"/>
+                            <TextBlock  Text="ARRIVAL" Margin="20,-20,0,0" FontFamily="Champagne &amp; Limousines" Foreground="Gray" FontSize="12" Width="51" Height="13"/>
+                            <TextBlock x:Name="efta_rwy_arr" Text="CLOSED" Margin="20,-15,0,0" FontWeight="Bold" FontFamily="Champagne &amp; Limousines" Foreground="Gray" FontSize="13" Height="16" Width="64"/>
+                            <TextBlock Text="DEPARTURE" Margin="-200,15,0,0" FontFamily="Champagne &amp; Limousines" Foreground="Gray" FontSize="12" Width="66"/>
+                            <TextBlock x:Name="efta_rwy_dep" Text="CLOSED" Margin="-65,15,0,0" FontWeight="Bold" FontFamily="Champagne &amp; Limousines" Foreground="Gray" FontSize="13" Height="15"/>
                         </StackPanel>
                     </Grid>
                 </Grid>
@@ -271,11 +268,10 @@
                             FontFamily="Champagne &amp; Limousines" VerticalAlignment="Top" 
                             Foreground="#8877a9 " Height="28" Width="139" RenderTransformOrigin="0.433,0.599" Margin="30,5,0,0" Grid.Row="1"/>
                         <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" VerticalAlignment="Top" Margin="-10,35,0,0" Grid.RowSpan="2">
-                            <TextBlock Text="ARRIVAL" Margin="0,0,0,0" FontFamily="Champagne &amp; Limousines" Foreground="Gray" FontSize="12"/>
-                            <TextBlock Text="30L" Margin="30,-25,0,0" FontWeight="Bold" FontFamily="Champagne &amp; Limousines" Foreground="Gray" FontSize="15" Height="15"/>
-                            <TextBlock Text="DEPARTURE" Margin="-140,15,0,0" HorizontalAlignment="Center" 
-                                       FontFamily="Champagne &amp; Limousines" Foreground="Gray" FontSize="12"/>
-                            <TextBlock Text="30R" Margin="-25,15,0,0" FontWeight="Bold" FontFamily="Champagne &amp; Limousines" Foreground="Gray" FontSize="15" Height="15"/>
+                            <TextBlock  Text="ARRIVAL" Margin="20,-20,0,0" FontFamily="Champagne &amp; Limousines" Foreground="Gray" FontSize="12" Width="51" Height="13"/>
+                            <TextBlock x:Name="omsj_rwy_arr" Text="CLOSED" Margin="20,-15,0,0" FontWeight="Bold" FontFamily="Champagne &amp; Limousines" Foreground="Gray" FontSize="13" Height="16" Width="64"/>
+                            <TextBlock Text="DEPARTURE" Margin="-200,15,0,0" FontFamily="Champagne &amp; Limousines" Foreground="Gray" FontSize="12" Width="66"/>
+                            <TextBlock x:Name="omsj_rwy_dep" Text="CLOSED" Margin="-65,15,0,0" FontWeight="Bold" FontFamily="Champagne &amp; Limousines" Foreground="Gray" FontSize="13" Height="15"/>
                         </StackPanel>
                     </Grid>
                 </Grid>
@@ -306,12 +302,11 @@
                         <TextBlock Text="OMDM" FontSize="20" HorizontalAlignment="Center" 
                             FontFamily="Champagne &amp; Limousines" VerticalAlignment="Top" 
                             Foreground="#8877a9 " Height="28" Width="139" RenderTransformOrigin="0.433,0.599" Margin="30,5,0,0" Grid.Row="1"/>
-                        <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" VerticalAlignment="Top" Margin="-10,35,0,0" Grid.RowSpan="2">
-                            <TextBlock Text="ARRIVAL" Margin="0,0,0,0" FontFamily="Champagne &amp; Limousines" Foreground="Gray" FontSize="12"/>
-                            <TextBlock Text="30L" Margin="30,-25,0,0" FontWeight="Bold" FontFamily="Champagne &amp; Limousines" Foreground="Gray" FontSize="15" Height="15"/>
-                            <TextBlock Text="DEPARTURE" Margin="-140,15,0,0" HorizontalAlignment="Center" 
-                                       FontFamily="Champagne &amp; Limousines" Foreground="Gray" FontSize="12"/>
-                            <TextBlock Text="30R" Margin="-25,15,0,0" FontWeight="Bold" FontFamily="Champagne &amp; Limousines" Foreground="Gray" FontSize="15" Height="15"/>
+                        <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" VerticalAlignment="Top" Margin="0,35,0,0" Grid.RowSpan="2">
+                            <TextBlock  Text="ARRIVAL" Margin="20,-20,0,0" FontFamily="Champagne &amp; Limousines" Foreground="Gray" FontSize="12" Width="51" Height="13"/>
+                            <TextBlock x:Name="omdm_rwy_arr" Text="CLOSED" Margin="20,-15,0,0" FontWeight="Bold" FontFamily="Champagne &amp; Limousines" Foreground="Gray" FontSize="13" Height="16" Width="64"/>
+                            <TextBlock Text="DEPARTURE" Margin="-200,15,0,0" FontFamily="Champagne &amp; Limousines" Foreground="Gray" FontSize="12" Width="66"/>
+                            <TextBlock x:Name="omdm_rwy_dep" Text="CLOSED" Margin="-65,15,0,0" FontWeight="Bold" FontFamily="Champagne &amp; Limousines" Foreground="Gray" FontSize="13" Height="15"/>
                         </StackPanel>
                     </Grid>
                 </Grid>
@@ -388,6 +383,6 @@
 
             </Grid>
         </Grid>
-        
+
     </Grid>
 </Window>

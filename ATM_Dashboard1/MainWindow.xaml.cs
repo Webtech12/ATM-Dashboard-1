@@ -23,6 +23,9 @@ namespace ATM_Dashboard1
         public MainWindow()
         {
             InitializeComponent();
+            DBhelper.EstablishConn();
+
+
             Json_Deserialize();
             //Fillomdm_met();
 
@@ -31,14 +34,176 @@ namespace ATM_Dashboard1
 
         public void Json_Deserialize()
         {
-            DispatcherTimer dispatcherTimer = new DispatcherTimer();
-            dispatcherTimer.Tick += new EventHandler(UpdatedMet);
-            dispatcherTimer.Interval = new TimeSpan(0, 0, 3);
-            dispatcherTimer.Start();
+             DispatcherTimer dispatcherTimer = new DispatcherTimer();
+             dispatcherTimer.Tick += new EventHandler(UpdatedSubjects);
+             dispatcherTimer.Tick += new EventHandler(UpdatedMet);
+             dispatcherTimer.Tick += new EventHandler(UpdatedFaults);
+             dispatcherTimer.Tick += new EventHandler(UpdatedRwy);
+             dispatcherTimer.Interval = new TimeSpan(0, 0, 3);
+             dispatcherTimer.Start(); 
+        }
+
+        private void UpdatedFaults(object sender, EventArgs e)
+        {
+            try
+            {
+                var client = new RestClient();
+
+                var request = new RestRequest(Url + DBhelper.Fill_Faults());
+                request.AddUrlSegment("initial", DBhelper.credsInitial);
+                request.AddHeader("Accept", "application/json");
+                IRestResponse<List<FaultJsonRootObject>> response = client.Get<List<FaultJsonRootObject>>(request);
+
+                if (response.IsSuccessful)
+                {
+                    Console.WriteLine("Status Code " + response.StatusCode);
+                    Console.WriteLine("Content " + response.Content);
+                    Console.WriteLine("Size of List " + response.Data.Count);
+                    Console.WriteLine("ID  " + response.Data[0].Id);
+
+                    fault_val.Text = response.Data[0].Id.ToString();
+                }
+                else
+                {
+                    Console.WriteLine("Status Code " + response.StatusCode);
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("There might be some problem while updating the faults" + ex.Message);
+            }
+        }
+
+        private void UpdatedRwy(object sender, EventArgs e)
+        {
+            int[] units = new int[5] { 5, 6, 7, 13, 14 };
+            try
+            {
+                var client = new RestClient();
+
+                foreach (int unit_id in units)
+                {
+                    var request = new RestRequest(Url + DBhelper.Fill_rwy());
+                    request.AddUrlSegment("rwy", "rwy");
+                    request.AddUrlSegment("runway_in_use", "runway_in_use");
+                    request.AddUrlSegment("runway_in_use_depart", "runway_in_use_depart");
+                    request.AddUrlSegment("unit_id", unit_id);
+
+                    request.AddHeader("Accept", "application/json");
+                    IRestResponse<List<RWYJsonRootObject>> response = client.Get<List<RWYJsonRootObject>>(request);
+
+                    if (response.IsSuccessful)
+                    {
+                        Console.WriteLine("Status Code " + response.StatusCode);
+                        Console.WriteLine("Content " + response.Content);
+                        Console.WriteLine("Size of List " + response.Data.Count);
+                        Console.WriteLine("Runway_in_use  " + response.Data[0].Runway_in_use);
+                        Console.WriteLine("Runway_in_use_depart  " + response.Data[0].Runway_in_use_depart);
+
+                        if (unit_id == 5)
+                        {
+                            var arrival = DBhelper.GetQueryRwy("runway", "runway", "runway_id", response.Data[0].Runway_in_use);
+                            omdb_rwy_arr.Text = arrival;
+                            var departure = DBhelper.GetQueryRwy("runway", "runway", "runway_id", response.Data[0].Runway_in_use_depart);
+                            omdb_rwy_dep.Text = departure;
+                        } 
+                        if (unit_id == 13)
+                        {
+                            var arrival = DBhelper.GetQueryRwy("runway", "runway", "runway_id", response.Data[0].Runway_in_use);
+                            omsj_rwy_arr.Text = arrival;
+                            var departure = DBhelper.GetQueryRwy("runway", "runway", "runway_id", response.Data[0].Runway_in_use_depart);
+                            omsj_rwy_dep.Text = departure;
+                        }
+                        if (unit_id == 14)
+                        {
+                            var arrival = DBhelper.GetQueryRwy("runway", "runway", "runway_id", response.Data[0].Runway_in_use);
+                            omdm_rwy_arr.Text = arrival;
+                            var departure = DBhelper.GetQueryRwy("runway", "runway", "runway_id", response.Data[0].Runway_in_use_depart);
+                            omdm_rwy_dep.Text = departure;
+                        }
+                        if (unit_id == 6)
+                        {
+                            var arrival = DBhelper.GetQueryRwy("runway", "runway", "runway_id", response.Data[0].Runway_in_use);
+                            omdw_rwy_arr.Text = arrival;
+                            var departure = DBhelper.GetQueryRwy("runway", "runway", "runway_id", response.Data[0].Runway_in_use_depart);
+                            omdw_rwy_dep.Text = departure;
+                        }
+                        if (unit_id == 7)
+                        {
+                            var arrival = DBhelper.GetQueryRwy("runway", "runway", "runway_id", response.Data[0].Runway_in_use);
+                            efta_rwy_arr.Text = arrival;
+                            var departure = DBhelper.GetQueryRwy("runway", "runway", "runway_id", response.Data[0].Runway_in_use_depart);
+                            efta_rwy_dep.Text = departure;
+                        } 
+
+                    }
+                    else
+                    {
+                        Console.WriteLine("Status Code " + response.StatusCode);
+                    }
+
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("There might be some problem while updating the Runways " + ex.Message);
+            }
 
         }
 
-    private void UpdatedMet(object sender, EventArgs e)
+        private void UpdatedSubjects(object sender, EventArgs e)
+        {
+            int[] subjects = new int[4] { 1, 79, 161, 162 };
+            try
+            {
+                foreach (int subjects_id in subjects)
+                {
+                    var client = new RestClient();
+
+                    var request = new RestRequest(Url + DBhelper.Fill_Subjects());
+                    request.AddUrlSegment("generalentry", "generalentry");
+                    request.AddUrlSegment("description", "description");
+                    request.AddUrlSegment("id", subjects_id);
+
+                    request.AddHeader("Accept", "application/json");
+                    IRestResponse<List<SubjectsJsonRootObject>> response = client.Get<List<SubjectsJsonRootObject>>(request);
+
+                    if (response.IsSuccessful)
+                    {
+                        Console.WriteLine("Status Code " + response.StatusCode);
+                        Console.WriteLine("Content " + response.Content);
+                        Console.WriteLine("Size of List " + response.Data.Count);
+                        Console.WriteLine("ID  " + response.Data[0].Description);
+                        if (subjects_id == 1)
+                        {
+                            aman_val.Text = response.Data[0].Description.Substring(0, 2);
+                        }
+                        if (subjects_id == 79)
+                        {
+                            dapo_subject.Text = response.Data[0].Description;
+                        }
+                        if (subjects_id == 161)
+                        {
+                            wt_subject.Text = response.Data[0].Description;
+                        }
+                        if (subjects_id == 162)
+                        {
+                            down_subject.Text = response.Data[0].Description;
+                        }
+                    }
+                    else
+                    {
+                        Console.WriteLine("Status Code " + response.StatusCode);
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("There might be some problem while updating the subjects" + ex.Message);
+            }
+        }
+
+        private void UpdatedMet(object sender, EventArgs e)
         {
             int[] units = new int[5] { 5, 6, 7, 13, 14 };
             try
@@ -173,4 +338,6 @@ namespace ATM_Dashboard1
 
         }
     }
+
 }
+

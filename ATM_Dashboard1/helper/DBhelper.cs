@@ -13,6 +13,12 @@ namespace ATM_Dashboard1.helper
         private static DataTable dt;
         private static MySqlDataAdapter sda;
 
+        // Session Credentials
+        public static string credsUnits;
+        public static string credsInitial;
+        public static string credsUser;
+
+
 
         // Connection to the database
         public static void EstablishConn()
@@ -89,6 +95,27 @@ namespace ATM_Dashboard1.helper
             string query = "SELECT " + column + " FROM atmars_testdb." + table + " where " + reference + " = "+input+" limit 1";
             return query;
         } 
+
+        public  static string GetQueryRwy(string table, string column, string reference, string input)
+        {
+            //input = '"'+input+'"';
+            string rwy = "";
+            string query = "SELECT " + column + " FROM atmars_testdb." + table + " where " + reference + " = "+input+"";
+
+            cmd = GetRelation(query);
+            if (cmd != null)
+            {
+                dt = new DataTable();
+                sda = new MySqlDataAdapter(cmd);
+                sda.Fill(dt);
+                foreach (DataRow dr in dt.Rows)
+                {
+                    rwy = dr["runway"].ToString().ToUpper();
+                }
+            }
+            return rwy;
+        } 
+
         public  static string GetQueryRWY(string table, string column, string reference, string input, int unit_id)
         {
             input = '"'+input+'"';
@@ -122,6 +149,23 @@ namespace ATM_Dashboard1.helper
         public static string Fill_met()
         {
             string paramUrl = "GetLatestUpdates/GetLatestUpdates/lastEntry/{met_condition}/{condition}/{unit_id}";
+            return paramUrl;
+        }
+        
+        public static string Fill_rwy()
+        {
+            string paramUrl = "GetLatestUpdates/GetLatestUpdates/lastEntryRwy/{rwy}/{runway_in_use}/{runway_in_use_depart}/{unit_id}";
+            return paramUrl;
+        }
+
+        public static string Fill_Subjects()
+        {
+            string paramUrl = "GetLatestUpdates/GetLatestUpdates/lastEntrySubject/{generalentry}/{description}/{id}";
+            return paramUrl;
+        }
+        public static string Fill_Faults()
+        {
+            string paramUrl = "GetLatestUpdates/GetLatestUpdates/TotalOpenFaults/{initial}";
             return paramUrl;
         }
 

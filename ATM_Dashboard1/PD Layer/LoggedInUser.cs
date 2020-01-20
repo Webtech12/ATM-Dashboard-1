@@ -6,20 +6,35 @@ namespace ATM_Dashboard1.PD_Layer
 {
     public class LoggedInUser
     {
-        private string loggedUser;
-        public LoggedInUser(string Uname)
+        private string unit;
+        private string initial;
+        private string uname;
+
+        public LoggedInUser(string uname,string unit, string initial)
         {
-            loggedUser = Uname;
+            LoggedUser = uname;
+            LoggedUnit = unit;
+            LoggedInitial = initial;
         }
 
-        public string LoggedUser
+        public String LoggedUser
         {
-            get { return loggedUser; }
-            set {
-                loggedUser = value;
-            }
+            get { return uname; }
+            set { uname = value; }
+        }
+
+        public String LoggedUnit
+        {
+            get { return unit; }
+            set { unit = value; }
+        }
+        public String LoggedInitial
+        {
+            get { return initial; }
+            set { initial = value; }
         }
 
 
     }
+
 }

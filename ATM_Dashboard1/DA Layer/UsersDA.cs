@@ -10,7 +10,6 @@ namespace ATM_Dashboard1.DA_Layer
         private static MySqlCommand cmd = null;
         private static DataTable dt;
         private static MySqlDataAdapter sda;
-        //public static LoggedInUser loggedInUser;
 
         public static Users RetrieveUser(string agentname)
         {
@@ -24,10 +23,13 @@ namespace ATM_Dashboard1.DA_Layer
                 sda.Fill(dt);
                 foreach (DataRow dr in dt.Rows)
                 {
-                    string uName = dr["agentname"].ToString();
-                    //loggedInUser = new LoggedInUser(uName);
+                    string uName = dr["agentname"].ToString();                    
                     string password = dr["agentpassword"].ToString();
-                    aUser = new Users(uName, password);
+                    string Initial = dr["agentcode"].ToString();
+                    string Unit = dr["agentunit"].ToString();
+
+                    aUser = new Users(uName, password, Unit, Initial);
+
                 }
             }
             return aUser;
