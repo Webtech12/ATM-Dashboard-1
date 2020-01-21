@@ -168,6 +168,11 @@ namespace ATM_Dashboard1.helper
             string paramUrl = "GetLatestUpdates/GetLatestUpdates/TotalOpenFaults/{initial}";
             return paramUrl;
         }
+        public static string Fill_Grid()
+        {
+            string paramUrl = "GetLatestUpdates/ElogSearch/elog_search/{date}";
+            return paramUrl;
+        }
 
         public static bool IsValid(string value)
         {

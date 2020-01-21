@@ -9,6 +9,7 @@
   <ItemGroup>
     <None Remove="assets\atmars1.png" />
     <None Remove="assets\atmarsbg.png" />
+    <None Remove="assets\bullet.png" />
     <None Remove="assets\DANS.png" />
     <None Remove="assets\Key.png" />
   </ItemGroup>
@@ -23,7 +24,7 @@
     <Resource Include="assets\atmars1.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Resource>
-    <Resource Include="assets\atmarsbg.png">
+    <Resource Include="assets\bullet.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Resource>
     <Resource Include="assets\DANS.png">

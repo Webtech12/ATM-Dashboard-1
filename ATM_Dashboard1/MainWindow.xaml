@@ -55,6 +55,64 @@
 
                 </Grid>
 
+                <Grid Grid.Row="2" Grid.RowSpan="4" Grid.ColumnSpan="6" HorizontalAlignment="Right" Width="1100" Height="510">
+
+                    <Grid>
+                        <Grid.OpacityMask>
+                            <VisualBrush Visual="{ Binding ElementName=BorderG2 }"/>
+                        </Grid.OpacityMask>
+                        <Border  CornerRadius="15" BorderBrush="DarkGreen" BorderThickness="2" />
+                    </Grid>
+
+                    <ListView x:Name="elog_grid" Margin="10"  VerticalContentAlignment="Top" ScrollViewer.VerticalScrollBarVisibility="Visible" ScrollViewer.CanContentScroll="False">
+                        <ListView.ItemTemplate>
+                            <DataTemplate>
+                                <ListViewItem Background="#82949a">
+                                    <StackPanel Orientation="Horizontal">
+                                        
+                                        <Image Source="assets/bullet.png" Height="20" Margin="0,0,5,0" />
+                                        
+                                        <TextBlock FontWeight="Bold" Text="Entry On" />
+                                        <TextBlock Text=" " />
+                                        <TextBlock Text="{Binding Subject}"/>
+                                        <TextBlock Text=", " />
+                                        
+                                        <TextBlock FontWeight="Bold" Text="Description"/>
+                                        <TextBlock Text=" " />
+                                        <TextBlock Text="{Binding Description}"/>
+                                        <TextBlock Text=", " />
+                                        
+                                        <TextBlock FontWeight="Bold" Text="Unit Comments"/>
+                                        <TextBlock Text=" " />
+                                        <TextBlock Text="{Binding Unit_comments}"/>
+                                        <TextBlock Text=", " />
+                                        
+                                        <TextBlock FontWeight="Bold" Text="Management Comments"/>
+                                        <TextBlock Text=" " />
+                                        <TextBlock Text="{Binding Management_comments}"/>
+                                        <TextBlock Text=", " />
+
+                                        <TextBlock FontWeight="Bold" Text="ATE Comments"/>
+                                        <TextBlock Text=" " />
+                                        <TextBlock Text="{Binding Ate_comments}"/>
+                                        <TextBlock Text=", " />
+
+                                        <TextBlock FontWeight="Bold" Text="Logged By"/>
+                                        <TextBlock Text=" " />
+                                        <TextBlock Text="{Binding Initial}"/>
+                                        <TextBlock Text=", " />
+
+                                        <TextBlock Text="{Binding Date}"/>
+                                        <TextBlock Text="{Binding Time}"/>
+
+                                    </StackPanel>
+                                </ListViewItem>
+                            </DataTemplate>
+                        </ListView.ItemTemplate>
+                    </ListView>
+
+                </Grid>
+
                 <Grid Grid.Column="0" Margin="0,0,50,0">
                     <Rectangle Height="70" Margin="20,40,20,40" Fill="White" RadiusY="10" RadiusX="10" >
                         <Rectangle.Effect>

@@ -24,14 +24,12 @@ namespace ATM_Dashboard1
         {
             InitializeComponent();
             DBhelper.EstablishConn();
-
-
-            Json_Deserialize();
-            //Fillomdm_met();
+            //Json_Deserialize();
+            ElogGrid();
 
         }
 
-
+        // Code For Calling All The Update Functions With Timer
         public void Json_Deserialize()
         {
              DispatcherTimer dispatcherTimer = new DispatcherTimer();
@@ -43,6 +41,50 @@ namespace ATM_Dashboard1
              dispatcherTimer.Start(); 
         }
 
+        // Elog Grid View
+        private void ElogGrid()
+        {
+            try
+            {
+                var client = new RestClient();
+
+                var request = new RestRequest(Url + DBhelper.Fill_Grid());
+                request.AddUrlSegment("date", "2020-01-21");
+                request.AddHeader("Accept", "application/json");
+                IRestResponse<List<ElogJsonRootObject>> response = client.Get<List<ElogJsonRootObject>>(request);
+
+                if (response.IsSuccessful)
+                {
+                    Console.WriteLine("Status Code " + response.StatusCode);
+                    Console.WriteLine("Content " + response.Content);
+                    Console.WriteLine("Size of List " + response.Data.Count);
+                    Console.WriteLine("ID  " + response.Data[0].Id);
+                    List<ElogJsonRootObject> items = new List<ElogJsonRootObject>();
+                    for (int i = 0; i < response.Data.Count; ++i)
+                    {
+                        items.Add(new ElogJsonRootObject()
+                        {
+                            Subject = response.Data[i].Subject.ToString(),
+                            Description = response.Data[i].Description.ToString(),
+                            Unit_comments = response.Data[i].Unit_comments.ToString(),
+                            Management_comments = response.Data[i].Management_comments.ToString(),
+                            Ate_comments = response.Data[i].Ate_comments.ToString(),
+                            Initial = response.Data[i].Initial.ToString(),
+                            Date = response.Data[i].Date.ToString(),
+                            Time = response.Data[i].Time.ToString()
+                        });
+
+                        elog_grid.ItemsSource = items;
+                    } 
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("There might be some problem while updating the Elog " + ex.Message);
+            }
+        }
+
+        // Update Dashboard Interval Code
         private void UpdatedFaults(object sender, EventArgs e)
         {
             try
@@ -153,9 +195,9 @@ namespace ATM_Dashboard1
 
         private void UpdatedSubjects(object sender, EventArgs e)
         {
-            int[] subjects = new int[4] { 1, 79, 161, 162 };
             try
             {
+                int[] subjects = new int[4] { 1, 79, 161, 162 };
                 foreach (int subjects_id in subjects)
                 {
                     var client = new RestClient();
@@ -199,7 +241,7 @@ namespace ATM_Dashboard1
             }
             catch (Exception ex)
             {
-                MessageBox.Show("There might be some problem while updating the subjects" + ex.Message);
+                MessageBox.Show("There might be some problem while updating the subjects " + ex.Message);
             }
         }
 
@@ -265,6 +307,8 @@ namespace ATM_Dashboard1
             
         }
 
+
+        // Modals Pop-Up Code
         private void aman_modal(object sender, RoutedEventArgs e)
         {
             aman_modal aman = new aman_modal();
