@@ -11,6 +11,7 @@
     <None Remove="assets\atmarsbg.png" />
     <None Remove="assets\bullet.png" />
     <None Remove="assets\DANS.png" />
+    <None Remove="assets\DANS_.png" />
     <None Remove="assets\Key.png" />
   </ItemGroup>
 
@@ -28,6 +29,9 @@
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Resource>
     <Resource Include="assets\DANS.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="assets\DANS_.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Resource>
     <Resource Include="assets\Key.png">

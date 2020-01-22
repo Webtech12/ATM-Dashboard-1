@@ -170,7 +170,7 @@ namespace ATM_Dashboard1.helper
         }
         public static string Fill_Grid()
         {
-            string paramUrl = "GetLatestUpdates/ElogSearch/elog_search/{date}";
+            string paramUrl = "GetLatestUpdates/ElogSearch/elog_search/{limit}/{offset}";
             return paramUrl;
         }
 

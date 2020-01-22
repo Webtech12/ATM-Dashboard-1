@@ -6,8 +6,13 @@ using RestSharp;
 using System;
 using System.Collections.Generic;
 using System.Data;
+using System.Diagnostics;
 using System.Threading.Tasks;
 using System.Windows;
+using System.Windows.Controls;
+using System.Windows.Controls.Primitives;
+using System.Windows.Input;
+using System.Windows.Media;
 using System.Windows.Threading;
 
 namespace ATM_Dashboard1
@@ -38,8 +43,10 @@ namespace ATM_Dashboard1
              dispatcherTimer.Tick += new EventHandler(UpdatedMet);
              dispatcherTimer.Tick += new EventHandler(UpdatedFaults);
              dispatcherTimer.Tick += new EventHandler(UpdatedRwy);
+             //dispatcherTimer.Tick += new EventHandler(ElogGrid);
              dispatcherTimer.Interval = new TimeSpan(0, 0, 3);
-             dispatcherTimer.Start(); 
+             dispatcherTimer.Start();
+
         }
 
         
@@ -53,7 +60,6 @@ namespace ATM_Dashboard1
                 var client = new RestClient();
 
                 var request = new RestRequest(Url + DBhelper.Fill_Grid());
-                request.AddUrlSegment("date", "2020-01-21");
                 request.AddHeader("Accept", "application/json");
                 IRestResponse<List<ElogJsonRootObject>> response = client.Get<List<ElogJsonRootObject>>(request);
                 //var response = GetRestResponseAsync<List<ElogJsonRootObject>>(client, request).GetAwaiter().GetResult();
@@ -77,6 +83,7 @@ namespace ATM_Dashboard1
                             Initial = response.Data[i].Initial.ToString(),
                             Date = response.Data[i].Date.ToString(),
                             Time = response.Data[i].Time.ToString()
+
                         });
 
                         elog_grid.ItemsSource = items;
@@ -88,6 +95,7 @@ namespace ATM_Dashboard1
                 MessageBox.Show("There might be some problem while updating the Elog " + ex.Message);
             }
         }
+
 
         // Elog Grid View Async
         private async Task<IRestResponse<T>> GetRestResponseAsync<T>(RestClient client, IRestRequest request) where T : class, new()
@@ -403,6 +411,13 @@ namespace ATM_Dashboard1
         private void epl(object sender, System.Windows.Input.MouseButtonEventArgs e)
         {
 
+        }
+
+        private void Button_Click(object sender, RoutedEventArgs e)
+        {
+            
+            Button btn = (Button)sender;
+            MessageBox.Show(btn.Name);
         }
     }
 

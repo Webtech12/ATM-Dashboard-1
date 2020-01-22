@@ -63,58 +63,67 @@
 
                     <Border  CornerRadius="15" BorderBrush="DarkGray" BorderThickness="1" />
 
-                    <ListView x:Name="elog_grid" Margin="10"  VerticalContentAlignment="Top" ScrollViewer.VerticalScrollBarVisibility="Visible" ScrollViewer.CanContentScroll="False">
+                    <ListView x:Name="elog_grid" Margin="10" VerticalContentAlignment="Top" ScrollViewer.VerticalScrollBarVisibility="Visible" ScrollViewer.CanContentScroll="False">
+                        
                         <ListView.ItemTemplate>
                             <DataTemplate>
                                 <ListViewItem Background="#fafafa">
-                                    <StackPanel Orientation="Horizontal">
-                                        
-                                        <Image Source="assets/bullet.png" Height="20" Margin="0,0,5,0" />
-                                        
-                                        <TextBlock FontWeight="Bold" Text="Entry On" />
-                                        <TextBlock Text=" " />
-                                        <TextBlock Text="{Binding Subject}"/>
-                                        <TextBlock Text=", " />
-                                        
-                                        <TextBlock FontWeight="Bold" Text="Description"/>
-                                        <TextBlock Text=" " />
-                                        <TextBlock Text="{Binding Description}"/>
-                                        <TextBlock Text=", " />
-                                        
-                                        <TextBlock FontWeight="Bold" Text="Unit Comments"/>
-                                        <TextBlock Text=" " />
-                                        <TextBlock Text="{Binding Unit_comments}"/>
-                                        <TextBlock Text=", " />
-                                        
-                                        <TextBlock FontWeight="Bold" Text="Management Comments"/>
-                                        <TextBlock Text=" " />
-                                        <TextBlock Text="{Binding Management_comments}"/>
-                                        <TextBlock Text=", " />
 
-                                        <TextBlock FontWeight="Bold" Text="ATE Comments"/>
-                                        <TextBlock Text=" " />
-                                        <TextBlock Text="{Binding Ate_comments}"/>
-                                        <TextBlock Text=", " />
+                                    <Button Click="Button_Click">
+                                        <StackPanel Orientation="Horizontal">
 
-                                        <TextBlock FontWeight="Bold" Text="Logged By"/>
-                                        <TextBlock Text=" " />
-                                        <TextBlock Text="{Binding Initial}"/>
-                                        <TextBlock Text=", " />
+                                            <Image Source="assets/bullet.png" Height="20" Margin="0,0,5,0" />
 
-                                        <TextBlock Text="{Binding Date}"/>
-                                        <TextBlock Text="{Binding Time}"/>
+                                            <TextBlock FontWeight="Bold" Text="Entry On" />
+                                            <TextBlock Text=" " />
+                                            <TextBlock Text="{Binding Subject}"/>
+                                            <TextBlock Text=", " />
 
-                                    </StackPanel>
+                                            <TextBlock FontWeight="Bold" Text="Description"/>
+                                            <TextBlock Text=" " />
+                                            <TextBlock Text="{Binding Description}"/>
+                                            <TextBlock Text=", " />
+
+                                            <TextBlock FontWeight="Bold" Text="Unit Comments"/>
+                                            <TextBlock Text=" " />
+                                            <TextBlock Text="{Binding Unit_comments}"/>
+                                            <TextBlock Text=", " />
+
+                                            <TextBlock FontWeight="Bold" Text="Management Comments"/>
+                                            <TextBlock Text=" " />
+                                            <TextBlock Text="{Binding Management_comments}"/>
+                                            <TextBlock Text=", " />
+
+                                            <TextBlock FontWeight="Bold" Text="ATE Comments"/>
+                                            <TextBlock Text=" " />
+                                            <TextBlock Text="{Binding Ate_comments}"/>
+                                            <TextBlock Text=", " />
+
+                                            <TextBlock FontWeight="Bold" Text="Logged By"/>
+                                            <TextBlock Text=" " />
+                                            <TextBlock Text="{Binding Initial}"/>
+                                            <TextBlock Text=", " />
+
+                                            <TextBlock Text="{Binding Date}"/>
+                                            <TextBlock Text="{Binding Time}"/>
+
+                                        </StackPanel>
+
+                                    </Button>
                                 </ListViewItem>
                             </DataTemplate>
                         </ListView.ItemTemplate>
+
                     </ListView>
 
                 </Grid>
-                
 
-                <Grid>
-                    <Image Source="assets/atmars1.png" Width="100" Height="30" VerticalAlignment="Top" Margin="240,33,10,0" RenderTransformOrigin="0.505,0.592"/>
+
+                <Grid Margin="-50,10,0,0">
+                    <Image Source="assets/atmars1.png" Width="110" Height="30" VerticalAlignment="Top"/>
+                </Grid>
+                <Grid Margin="-20,10,0,0" Grid.Column="5">
+                    <Image Source="assets/DANS_.png" Width="110" Height="33" VerticalAlignment="Top"/>
                 </Grid>
                 
 
