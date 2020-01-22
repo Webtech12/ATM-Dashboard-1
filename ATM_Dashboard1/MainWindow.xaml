@@ -40,7 +40,7 @@
                         <Grid.OpacityMask>
                             <VisualBrush Visual="{ Binding ElementName=BorderG2 }"/>
                         </Grid.OpacityMask>
-                        <Border x:Name="BorderG2" CornerRadius="15" BorderBrush="DarkGray" BorderThickness="2"/>
+                        <Border x:Name="BorderG2" CornerRadius="15" BorderBrush="DarkGray" BorderThickness="1 0 2 0"/>
                     </Grid>
 
                 </Grid>
@@ -50,24 +50,23 @@
                         <Grid.OpacityMask>
                             <VisualBrush Visual="{ Binding ElementName=BorderG2 }"/>
                         </Grid.OpacityMask>
-                        <Border x:Name="BorderG3" CornerRadius="15" BorderBrush="DarkGray" BorderThickness="2" />
+                        <Border x:Name="BorderG3" CornerRadius="15" BorderBrush="DarkGray" BorderThickness="1 0 2 0" />
                     </Grid>
 
                 </Grid>
 
-                <Grid Grid.Row="2" Grid.RowSpan="4" Grid.ColumnSpan="6" HorizontalAlignment="Right" Width="1100" Height="510">
+                <Grid Grid.Row="2" Grid.ColumnSpan="5" HorizontalAlignment="Center">
+                    <Label Content="E-LOG MAIN VIEW" FontWeight="Bold" Foreground="Gray" FontSize="18"/>
+                </Grid>
 
-                    <Grid>
-                        <Grid.OpacityMask>
-                            <VisualBrush Visual="{ Binding ElementName=BorderG2 }"/>
-                        </Grid.OpacityMask>
-                        <Border  CornerRadius="15" BorderBrush="DarkGreen" BorderThickness="2" />
-                    </Grid>
+                <Grid Grid.Row="2" Grid.RowSpan="4" Margin="0 10" Grid.ColumnSpan="6" HorizontalAlignment="Right" Width="1100" Height="510">
+
+                    <Border  CornerRadius="15" BorderBrush="DarkGray" BorderThickness="1" />
 
                     <ListView x:Name="elog_grid" Margin="10"  VerticalContentAlignment="Top" ScrollViewer.VerticalScrollBarVisibility="Visible" ScrollViewer.CanContentScroll="False">
                         <ListView.ItemTemplate>
                             <DataTemplate>
-                                <ListViewItem Background="#82949a">
+                                <ListViewItem Background="#fafafa">
                                     <StackPanel Orientation="Horizontal">
                                         
                                         <Image Source="assets/bullet.png" Height="20" Margin="0,0,5,0" />
@@ -112,6 +111,12 @@
                     </ListView>
 
                 </Grid>
+                
+
+                <Grid>
+                    <Image Source="assets/atmars1.png" Width="100" Height="30" VerticalAlignment="Top" Margin="240,33,10,0" RenderTransformOrigin="0.505,0.592"/>
+                </Grid>
+                
 
                 <Grid Grid.Column="0" Margin="0,0,50,0">
                     <Rectangle Height="70" Margin="20,40,20,40" Fill="White" RadiusY="10" RadiusX="10" >

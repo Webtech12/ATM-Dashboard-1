@@ -15,7 +15,7 @@ namespace ATM_Dashboard1
         {
             InitializeComponent();
             DBhelper.EstablishConn();
-            
+
         }
 
         private void Login_Click(object sender, RoutedEventArgs e)
@@ -23,7 +23,7 @@ namespace ATM_Dashboard1
 
             string username = txtname.Text;
             string password = txtpass.Password;
-            
+
             if (username.Length < 1 || password.Length < 1)
             {
                 MessageBox.Show("Fill all fields!");
@@ -56,7 +56,7 @@ namespace ATM_Dashboard1
                 {
                     MessageBox.Show("Username not found " + ex.Message);
                 }
-               
+
             }
 
         }

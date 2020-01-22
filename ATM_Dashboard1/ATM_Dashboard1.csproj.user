@@ -7,10 +7,10 @@
     </ApplicationDefinition>
   </ItemGroup>
   <ItemGroup>
-    <Compile Update="modals\aman_modal.xaml.cs">
+    <Compile Update="ATM_Login.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Update="ATM_Login.xaml.cs">
+    <Compile Update="modals\aman_modal.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
     <Compile Update="modals\dapo_modal.xaml.cs">
@@ -42,10 +42,10 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
-    <Page Update="modals\aman_modal.xaml">
+    <Page Update="ATM_Login.xaml">
       <SubType>Designer</SubType>
     </Page>
-    <Page Update="ATM_Login.xaml">
+    <Page Update="modals\aman_modal.xaml">
       <SubType>Designer</SubType>
     </Page>
     <Page Update="MainWindow.xaml">

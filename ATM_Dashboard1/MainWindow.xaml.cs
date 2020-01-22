@@ -6,6 +6,7 @@ using RestSharp;
 using System;
 using System.Collections.Generic;
 using System.Data;
+using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Threading;
 
@@ -41,6 +42,9 @@ namespace ATM_Dashboard1
              dispatcherTimer.Start(); 
         }
 
+        
+
+
         // Elog Grid View
         private void ElogGrid()
         {
@@ -52,6 +56,7 @@ namespace ATM_Dashboard1
                 request.AddUrlSegment("date", "2020-01-21");
                 request.AddHeader("Accept", "application/json");
                 IRestResponse<List<ElogJsonRootObject>> response = client.Get<List<ElogJsonRootObject>>(request);
+                //var response = GetRestResponseAsync<List<ElogJsonRootObject>>(client, request).GetAwaiter().GetResult();
 
                 if (response.IsSuccessful)
                 {
@@ -82,6 +87,24 @@ namespace ATM_Dashboard1
             {
                 MessageBox.Show("There might be some problem while updating the Elog " + ex.Message);
             }
+        }
+
+        // Elog Grid View Async
+        private async Task<IRestResponse<T>> GetRestResponseAsync<T>(RestClient client, IRestRequest request) where T : class, new()
+        {
+            var taskCompletionSource = new TaskCompletionSource<IRestResponse<T>>();
+
+            client.ExecuteAsync<T>(request, response =>
+            {
+                if (response.ErrorException != null)
+                {
+                    const string message = "Error during fetching...";
+                    throw new ApplicationException(message, response.ErrorException);
+                }
+                taskCompletionSource.SetResult(response);
+            });
+
+            return await taskCompletionSource.Task;
         }
 
         // Update Dashboard Interval Code
